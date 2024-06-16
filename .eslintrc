@@ -53,12 +53,13 @@
       "error",
       {
         "groups": [
-          ["^react", "^styled-components", "^@testing-library"],
+          ["^react", "^react-redux", "^@reduxjs/toolkit", "^@testing-library"],
           [
             "^@constants(/.*|$)",
             "^@utils(/.*|$)",
             "^@hooks(/.*|$)",
             "^@assets(/.*|$)",
+            "^@redux(/.*|$)",
             "^@styles(/.*|$)",
             "^@mocks(/.*|$)",
             "^@src/types(/.*|$)"
