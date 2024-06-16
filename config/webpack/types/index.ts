@@ -12,6 +12,7 @@ export interface BuildPaths {
   pages: string;
   utils: string;
   styles: string;
+  favicon: string;
 }
 
 export type BuildMode = "production" | "development";
