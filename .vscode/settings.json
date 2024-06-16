@@ -1,0 +1,46 @@
+{
+  "files.associations": {
+    "*.kit": "html"
+  },
+  "editor.renderWhitespace": "all",
+  "editor.detectIndentation": false,
+  "editor.hover.enabled": true,
+  "editor.mouseWheelZoom": true,
+  "workbench.editor.closeEmptyGroups": false,
+  "explorer.confirmDelete": false,
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "autoprefix": "last 5 versions",
+      "extensionName": ".css",
+      "savePath": null
+    }
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "workbench.iconTheme": "vscode-icons",
+  "files.eol": "\n",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "liveSassCompile.settings.showOutputWindowOn": "None",
+  "liveServer.settings.donotVerifyTags": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "colorHelper.disableGpu": 0,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.startupEditor": "none",
+  "explorer.confirmDragAndDrop": false,
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.sideBar.location": "right",
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.defaultProfile.linux": "",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "editor.tabSize": 2,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.showExecutionMessage": false,
+  "window.zoomLevel": 1,
+  "editor.formatOnSave": true
+}
