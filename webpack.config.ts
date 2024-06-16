@@ -23,6 +23,7 @@ export default (env: EnvVariables) => {
     constants: path.resolve(__dirname, "src", "constants"),
     pages: path.resolve(__dirname, "src", "pages"),
     utils: path.resolve(__dirname, "src", "utils"),
+    redux: path.resolve(__dirname, "src", "redux"),
     favicon: path.resolve(__dirname, "public", "favicon.svg")
   };
   const config: webpack.Configuration = buildWebpack({

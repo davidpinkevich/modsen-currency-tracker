@@ -21,7 +21,8 @@
       "@services/*": ["./src/services/*"],
       "@constants/*": ["./src/constants/*"],
       "@pages/*": ["./src/pages/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
+      "@redux/*": ["./src/redux/*"]
     }
   },
   "types": ["jest", "@testing-library/jest-dom", "node"],

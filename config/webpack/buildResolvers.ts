@@ -15,7 +15,8 @@ export function buildResolvers(
       "@services": options.paths.services,
       "@constants": options.paths.constants,
       "@pages": options.paths.pages,
-      "@utils": options.paths.utils
+      "@utils": options.paths.utils,
+      "@redux": options.paths.redux
     },
     extensions: [".tsx", ".ts", ".js"]
   };

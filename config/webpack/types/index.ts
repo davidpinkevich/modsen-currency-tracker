@@ -13,6 +13,7 @@ export interface BuildPaths {
   utils: string;
   styles: string;
   favicon: string;
+  redux: string;
 }
 
 export type BuildMode = "production" | "development";
