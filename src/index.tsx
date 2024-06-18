@@ -6,7 +6,7 @@ import { store } from "@redux/store";
 
 import { App } from "@components/App";
 
-import "./styles/general.scss";
+import "@styles/general.scss";
 
 const root = document.getElementById("root");
 
