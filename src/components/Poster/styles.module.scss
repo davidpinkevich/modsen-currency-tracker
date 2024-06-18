@@ -1,0 +1,15 @@
+@import "@styles/variables.scss";
+
+.poster {
+  display: flex;
+  font-family: $FontPoppins;
+  width: 100%;
+  padding-top: 45px;
+  padding-bottom: 59px;
+  background: linear-gradient(
+    50deg,
+    rgba(3, 3, 4, 1) 12%,
+    rgba(18, 192, 90, 0.3) 40%,
+    rgba(3, 3, 4, 1) 92%
+  );
+}
