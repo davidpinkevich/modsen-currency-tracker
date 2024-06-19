@@ -10,4 +10,11 @@
   &:hover {
     transform: scale(1.1);
   }
+
+  &_white {
+    color: $DarkGray;
+    &:hover {
+      color: $ColorBlack;
+    }
+  }
 }
