@@ -17,4 +17,11 @@
       color: $ColorBlack;
     }
   }
+
+  &_name {
+    font-weight: 600;
+    &_active {
+      font-weight: 300;
+    }
+  }
 }
