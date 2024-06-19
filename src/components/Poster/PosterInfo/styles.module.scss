@@ -7,21 +7,13 @@
   gap: 20px;
   width: 57%;
   &_title {
+    @extend %gradient-font;
     font-size: 76px;
     line-height: 125%;
     margin-right: 64px;
     text-align: end;
     font-weight: 600;
     max-width: 700px;
-    background: linear-gradient(
-      50deg,
-      rgb(0, 206, 44) 0%,
-      rgb(174, 223, 35) 49%,
-      rgb(163, 220, 0) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
 
   &_describe {

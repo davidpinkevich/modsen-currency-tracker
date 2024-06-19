@@ -2,9 +2,9 @@
 
 .app {
   font-family: $FontPoppins;
-  background-color: $ThemeBlack;
+  background-color: $ColorBlack;
   transition: all 0.2s;
   &_white {
-    background-color: $ThemeWhite;
+    background-color: $ColorWhite;
   }
 }

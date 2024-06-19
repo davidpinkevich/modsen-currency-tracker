@@ -2,14 +2,14 @@
 
 .swiper {
   position: relative;
-  background-color: $ThemeBlack;
+  background-color: $ColorBlack;
   width: 50px;
   height: 25px;
   border-radius: 14px;
-  border: 2px $ThemeWhite solid;
+  border: 2px $ColorWhite solid;
   &_white {
-    border: 2px $ThemeBlack solid;
-    background-color: $ThemeWhite;
+    border: 2px $ColorBlack solid;
+    background-color: $ColorWhite;
   }
   &_button {
     position: absolute;
@@ -18,14 +18,14 @@
     width: 25px;
     z-index: 2;
     background-color: inherit;
-    border: 2px $ThemeWhite solid;
+    border: 2px $ColorWhite solid;
     border-radius: 50%;
     top: -1.5px;
     left: -2px;
     &_white {
       left: 23px;
-      border: 2px $ThemeBlack solid;
-      background-color: $ThemeWhite;
+      border: 2px $ColorBlack solid;
+      background-color: $ColorWhite;
     }
   }
 }
