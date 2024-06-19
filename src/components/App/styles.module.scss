@@ -1,0 +1,10 @@
+@import "@styles/variables.scss";
+
+.app {
+  font-family: $FontPoppins;
+  background-color: $ThemeBlack;
+  transition: all 0.2s;
+  &_white {
+    background-color: $ThemeWhite;
+  }
+}
