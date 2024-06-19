@@ -1,5 +1,5 @@
-import { PosterInfo } from "./PosterInfo";
 import { PosterImage } from "./PosterImage";
+import { PosterInfo } from "./PosterInfo";
 
 import styles from "./styles.module.scss";
 
