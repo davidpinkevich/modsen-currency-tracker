@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
+import { useTheme } from "@hooks/useTheme";
+
 import { MainLayout } from "@pages/MainLayout";
 
 import styles from "./styles.module.scss";
@@ -19,8 +21,10 @@ const routes = [
 ];
 
 const App: React.FC = () => {
+  const theme = useTheme();
+
   return (
-    <div className={styles.app_black}>
+    <div className={theme === "dark" ? styles.app : styles.app_white}>
       <Routes>
         {routes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element}>
