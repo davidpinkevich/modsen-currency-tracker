@@ -1,0 +1,14 @@
+@import "@styles/variables.scss";
+
+.copy {
+  text-align: center;
+  font-size: $FonstSizeFooterAboutInfo;
+  color: $MainGray;
+  margin-top: 55px;
+  padding-bottom: 40px;
+  transition: all 0.2s;
+
+  &_white {
+    color: $DarkGray;
+  }
+}

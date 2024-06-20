@@ -1,0 +1,32 @@
+$ColorBlack: rgb(3, 3, 4);
+$ColorWhite: rgb(255, 255, 255);
+$MainGray: rgb(217, 217, 217);
+$DarkGray: rgb(134, 119, 119);
+$FontPoppins: "Poppins", sans-serif;
+$FontInter: "Inter", sans-serif;
+$breakPointSM: 576px;
+$breakPointMD: 768px;
+$breakPointLG: 992px;
+$breakPointXL: 1200px;
+
+$FonstSizeHeader: 20px;
+$FonstSizePoster: 25px;
+
+$FonstSizeFooterAboutTitle: 26px;
+$FonstSizeFooterAboutInfo: 24px;
+$FonstSizeFooterNavTitle: 28px;
+$FonstSizeFooterNavLink: 24px;
+
+$widthContainer: 1254px;
+
+%gradient-font {
+  background: linear-gradient(
+    50deg,
+    rgb(0, 206, 44) 0%,
+    rgb(174, 223, 35) 49%,
+    rgb(163, 220, 0) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

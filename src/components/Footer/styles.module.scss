@@ -1,0 +1,11 @@
+@import "@styles/variables.scss";
+
+.footer {
+  width: 100%;
+  padding: 0 15px;
+  max-width: $widthContainer;
+  &_info {
+    display: flex;
+    gap: 105px;
+  }
+}

@@ -1,0 +1,27 @@
+@import "@styles/variables.scss";
+
+.link {
+  font-family: $FontPoppins;
+  color: $ColorWhite;
+  font-size: $FonstSizeHeader;
+  font-weight: 300;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &_white {
+    color: $DarkGray;
+    &:hover {
+      color: $ColorBlack;
+    }
+  }
+
+  &_name {
+    font-weight: 600;
+    &_active {
+      font-weight: 300;
+    }
+  }
+}
