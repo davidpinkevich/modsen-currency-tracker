@@ -1,5 +1,7 @@
 import classNames from "classnames";
 
+import { ThemeMode } from "@constants/themeMode";
+
 import styles from "./styles.module.scss";
 
 import { useTheme } from "@src/hooks/useTheme";
@@ -10,7 +12,7 @@ const FooterNav: React.FC = () => {
   return (
     <ul
       className={
-        theme === "dark"
+        theme === ThemeMode.dark
           ? styles.footer_nav
           : classNames(styles.footer_nav, styles.footer_nav_white)
       }>

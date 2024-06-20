@@ -1,5 +1,6 @@
 import classNames from "classnames";
 
+import { ThemeMode } from "@constants/themeMode";
 import { useTheme } from "@hooks/useTheme";
 
 import styles from "./styles.module.scss";
@@ -12,7 +13,7 @@ const PosterInfo: React.FC = () => {
       <h1 className={styles.poster_info_title}>Modsen Currency Tracker</h1>
       <p
         className={
-          theme === "dark"
+          theme === ThemeMode.dark
             ? styles.poster_info_describe
             : classNames(
                 styles.poster_info_describe,

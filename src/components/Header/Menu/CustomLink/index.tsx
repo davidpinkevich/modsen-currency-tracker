@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
 
+import { ThemeMode } from "@constants/themeMode";
 import { getLocation } from "@utils/helpers/getLocation";
 import { useTheme } from "@hooks/useTheme";
 import { type TypeLinkHeader } from "@src/types";
@@ -14,7 +15,7 @@ const CustomLink: React.FC<TypeLinkHeader> = ({ name, path }) => {
   return (
     <Link
       className={
-        theme === "dark"
+        theme === ThemeMode.dark
           ? styles.link
           : classNames(styles.link, styles.link_white)
       }

@@ -1,5 +1,6 @@
 import classNames from "classnames";
 
+import { ThemeMode } from "@constants/themeMode";
 import { useTheme } from "@hooks/useTheme";
 
 import { PosterImage } from "./PosterImage";
@@ -12,7 +13,7 @@ const Poster: React.FC = () => {
   return (
     <article
       className={
-        theme === "dark"
+        theme === ThemeMode.dark
           ? styles.poster
           : classNames(styles.poster, styles.poster_white)
       }>

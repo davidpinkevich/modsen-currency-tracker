@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { ThemeMode } from "@constants/themeMode";
+
 interface TypeInitialState {
   theme: string;
 }
 
 const initialState: TypeInitialState = {
-  theme: "dark"
+  theme: ThemeMode.dark
 };
 
 const sliceMemory = createSlice({
@@ -13,7 +15,8 @@ const sliceMemory = createSlice({
   initialState,
   reducers: {
     changeTheme: (state) => {
-      state.theme = state.theme === "dark" ? "white" : "dark";
+      state.theme =
+        state.theme === ThemeMode.dark ? ThemeMode.white : ThemeMode.dark;
     }
   },
   selectors: {

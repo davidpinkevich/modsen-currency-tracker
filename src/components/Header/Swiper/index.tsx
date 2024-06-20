@@ -1,5 +1,6 @@
 import classNames from "classnames";
 
+import { ThemeMode } from "@constants/themeMode";
 import { useAppDispatch } from "@hooks/useRedux";
 import { useTheme } from "@hooks/useTheme";
 import { changeTheme } from "@redux/slices/sliceMemory";
@@ -17,13 +18,13 @@ const Swiper: React.FC = () => {
     <button
       onClick={handlerButton}
       className={
-        theme === "dark"
+        theme === ThemeMode.dark
           ? styles.swiper
           : classNames(styles.swiper, styles.swiper_white)
       }>
       <div
         className={
-          theme === "dark"
+          theme === ThemeMode.dark
             ? styles.swiper_button
             : classNames(styles.swiper_button, styles.swiper_button_white)
         }

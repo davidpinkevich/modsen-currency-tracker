@@ -1,5 +1,6 @@
 import classNames from "classnames";
 
+import { ThemeMode } from "@constants/themeMode";
 import graph from "@assets/icons/graph.svg";
 
 import styles from "./styles.module.scss";
@@ -12,7 +13,7 @@ const FooterAbout: React.FC = () => {
   return (
     <div
       className={
-        theme === "dark"
+        theme === ThemeMode.dark
           ? styles.footer_about
           : classNames(styles.footer_about, styles.footer_about_white)
       }>

@@ -1,5 +1,7 @@
 import classNames from "classnames";
 
+import { ThemeMode } from "@constants/themeMode";
+
 import styles from "./styles.module.scss";
 
 import { useTheme } from "@src/hooks/useTheme";
@@ -10,7 +12,7 @@ const FooterCopyright: React.FC = () => {
   return (
     <p
       className={
-        theme === "dark"
+        theme === ThemeMode.dark
           ? styles.copy
           : classNames(styles.copy, styles.copy_white)
       }>
