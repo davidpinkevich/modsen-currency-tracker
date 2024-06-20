@@ -1,8 +1,3 @@
-const LINKS_HEADER = [
-  { name: "Home", path: "/" },
-  { name: "Timeline", path: "timeline" },
-  { name: "Bank card", path: "card" },
-  { name: "Contacts", path: "contacts" }
-];
+import { LINKS_HEADER } from "./linksHeader";
 
 export { LINKS_HEADER };
