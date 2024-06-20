@@ -1,4 +1,3 @@
-export interface TypeLinkHeader {
-  name: string;
-  path: string;
-}
+import { type TypeLinkHeader } from "./LinkHeader.types";
+
+export type { TypeLinkHeader };
