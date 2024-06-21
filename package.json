@@ -68,6 +68,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
+    "axios": "^1.7.2",
     "classnames": "^2.5.1",
     "dotenv-webpack": "^8.1.0",
     "process": "^0.11.10",
