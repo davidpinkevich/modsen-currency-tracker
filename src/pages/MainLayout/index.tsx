@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 
-import { createTimeUpdate } from "@utils/helpers/createTimeUpdate";
 import { useFetchCurrencies } from "@hooks/useFetchCurrencies";
 
 import { Footer } from "@components/Footer";
