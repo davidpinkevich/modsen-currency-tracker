@@ -37,10 +37,10 @@
   &_white {
     color: $DarkGray;
     & > span:first-child {
-      background-color: rgb(78, 247, 78);
+      background-color: $ColorGreenCircleWhite;
     }
     & > span:last-child {
-      background-color: rgb(207, 251, 207);
+      background-color: $ColorGreenShadowWhite;
     }
   }
 }
