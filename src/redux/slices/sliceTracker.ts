@@ -1,12 +1,22 @@
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { type PayloadAction } from "@reduxjs/toolkit";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface TypeInitialState {
   openMenu: boolean;
+  openModal: boolean;
+  conversionISO: {
+    from: string;
+    to: string;
+  };
 }
 
 const initialState: TypeInitialState = {
-  openMenu: false
+  openMenu: false,
+  openModal: false,
+  conversionISO: {
+    from: "",
+    to: ""
+  }
 };
 
 const sliceTracker = createSlice({
@@ -15,13 +25,30 @@ const sliceTracker = createSlice({
   reducers: {
     changeMenu: (state) => {
       state.openMenu = !state.openMenu;
+    },
+    changeModal: (state) => {
+      state.openModal = !state.openModal;
+    },
+    changeConversionISOFrom: (state, action: PayloadAction<string>) => {
+      state.conversionISO.from = action.payload;
+    },
+    changeConversionISOTo: (state, action: PayloadAction<string>) => {
+      state.conversionISO.to = action.payload;
     }
   },
   selectors: {
-    getOpenMenu: (state) => state.openMenu
+    getOpenMenu: (state) => state.openMenu,
+    getOpenModal: (state) => state.openModal,
+    getConversionISO: (state) => state.conversionISO
   }
 });
 
-export const { changeMenu } = sliceTracker.actions;
-export const { getOpenMenu } = sliceTracker.selectors;
+export const {
+  changeMenu,
+  changeModal,
+  changeConversionISOFrom,
+  changeConversionISOTo
+} = sliceTracker.actions;
+export const { getOpenMenu, getOpenModal, getConversionISO } =
+  sliceTracker.selectors;
 export default sliceTracker.reducer;
