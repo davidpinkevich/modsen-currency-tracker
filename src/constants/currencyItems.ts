@@ -15,12 +15,10 @@ const CURRENCY_ITEMS: TypeCurrencyItems = {
   STOKS: [
     {
       title: "Bovespa Index",
-      value: "0.15%",
       img: bovindex
     },
     {
       title: "IFIX",
-      value: "0.15%",
       img: ifix
     }
   ],
