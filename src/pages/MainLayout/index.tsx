@@ -10,7 +10,7 @@ import { TimeStamp } from "@components/TimeStamp";
 import styles from "./styles.module.scss";
 
 const MainLayout: React.FC = () => {
-  const { timeStamp } = useFetchCurrencies(20000);
+  const { timeStamp } = useFetchCurrencies(86400000);
 
   return (
     <div className={styles.layout}>
