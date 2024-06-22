@@ -1,0 +1,58 @@
+@import "@styles/variables.scss";
+
+.timestamp {
+  position: relative;
+  padding-top: 50px;
+  font-family: $FontPoppins;
+  font-size: $FonstSizeCurrencyInfo;
+  color: $MainGray;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  & > span:first-child {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    width: 16px;
+    height: 16px;
+    background-color: $ColorGreenCircle;
+    border-radius: 50%;
+    animation: pulseMainCircle 1.5s infinite;
+  }
+
+  & > span:last-child {
+    position: absolute;
+    bottom: 3px;
+    left: -4.5px;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-color: $ColorGreenShadow;
+    border-radius: 50%;
+    animation: pulseMainCircle 3s infinite;
+  }
+
+  &_white {
+    color: $DarkGray;
+    & > span:first-child {
+      background-color: rgb(78, 247, 78);
+    }
+    & > span:last-child {
+      background-color: rgb(207, 251, 207);
+    }
+  }
+}
+
+@keyframes pulseMainCircle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
