@@ -20,6 +20,15 @@
     border-radius: 8px;
     border: 2px solid rgb(123, 121, 121);
     transition: all 0.2s;
+    @media (max-width: $breakPointSM) {
+      width: 400px;
+      top: 10%;
+      left: calc(50% - 200px);
+    }
+    @media (max-width: $breakPointESM) {
+      width: 320px;
+      left: calc(50% - 160px);
+    }
     &_white {
       background-color: rgb(223, 225, 223);
     }
