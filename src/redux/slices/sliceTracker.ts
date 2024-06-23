@@ -23,8 +23,8 @@ const sliceTracker = createSlice({
   name: "sliceTracker",
   initialState,
   reducers: {
-    changeMenu: (state) => {
-      state.openMenu = !state.openMenu;
+    changeMenu: (state, action: PayloadAction<boolean>) => {
+      state.openMenu = action.payload;
     },
     changeModal: (state) => {
       state.openModal = !state.openModal;
