@@ -1,7 +1,14 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
 .poster_image {
   position: relative;
   width: 300px;
   height: 312px;
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(width, 300, 140);
+    @include adaptiv-360(height, 312, 144);
+  }
 
   & img {
     width: 100%;

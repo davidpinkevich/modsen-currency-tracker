@@ -7,6 +7,12 @@
   padding-top: 45px;
   padding-bottom: 59px;
   transition: all 0.2s;
+  @media (max-width: $breakPointSM) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
   background: linear-gradient(
     50deg,
     rgba(3, 3, 4, 1) 12%,
