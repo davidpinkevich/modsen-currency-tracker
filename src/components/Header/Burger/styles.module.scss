@@ -44,14 +44,25 @@
       transform: rotate(45deg) translate(0, -50%);
     }
   }
+
+  &_white {
+    &::after,
+    &::before {
+      background-color: $ColorBlack;
+    }
+  }
 }
 
 .burger_span {
   height: 2px;
   width: 100%;
-  background-color: red;
+  background-color: $ColorWhite;
   transform: scale(1);
   &_open {
     transform: scale(0);
+  }
+
+  &_white {
+    background-color: $ColorBlack;
   }
 }

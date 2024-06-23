@@ -1,4 +1,5 @@
 @import "@styles/variables.scss";
+@import "@styles/mixins.scss";
 
 .header {
   position: relative;
@@ -8,6 +9,12 @@
   min-height: 103px;
   gap: 20px;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 25px;
   max-width: $widthContainer;
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(min-height, 103, 80);
+  }
+  @media (max-width: $breakPointMD) {
+    justify-content: center;
+  }
 }
