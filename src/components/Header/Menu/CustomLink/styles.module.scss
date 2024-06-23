@@ -7,15 +7,16 @@
   font-weight: 300;
   transition: all 0.2s;
 
+  @media (max-width: $breakPointSM) {
+    font-size: $FonstSizeCurrencyTitle;
+  }
+
   &:hover {
     transform: scale(1.1);
   }
 
   &_white {
-    color: $DarkGray;
-    &:hover {
-      color: $ColorBlack;
-    }
+    color: $ColorBlack;
   }
 
   &_name {
