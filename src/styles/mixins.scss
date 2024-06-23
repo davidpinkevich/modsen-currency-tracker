@@ -1,0 +1,6 @@
+@mixin adaptiv-360($property, $startSize, $minSize) {
+  #{$property}: calc(
+    #{$minSize + px} + (#{$startSize} - #{$minSize}) * ((100vw - 360px) /
+          (1400 - 360))
+  );
+}
