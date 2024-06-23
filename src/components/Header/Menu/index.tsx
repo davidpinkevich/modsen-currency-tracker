@@ -10,7 +10,6 @@ import styles from "./styles.module.scss";
 
 const Menu: React.FC = () => {
   const openMenu = useAppSelector(getOpenMenu);
-  console.log(openMenu);
 
   return (
     <nav
