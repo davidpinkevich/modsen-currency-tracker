@@ -37,7 +37,8 @@ const Conversion = () => {
         placeholder="Enter amount"
       />
       <p>
-        To: {result} <span>{conversionISO.to}</span>
+        To: <span>{conversionISO.to}</span>
+        <p>{result}</p>
       </p>
       <div className={styles.conversion_items}>
         {CURRENCY_ITEMS.QUOTES.map((item, index) => {
