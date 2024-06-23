@@ -41,7 +41,7 @@ const BlockCurrencies: React.FC = () => {
               <Currency
                 key={index}
                 loading={loading}
-                value={data ? data[item.iso].value : ""}
+                value={data ? data[item.iso]?.value : ""}
                 {...item}
               />
             );
