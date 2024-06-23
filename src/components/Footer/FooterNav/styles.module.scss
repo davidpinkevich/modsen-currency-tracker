@@ -1,4 +1,5 @@
 @import "@styles/variables.scss";
+@import "@styles/mixins.scss";
 
 .footer_nav {
   font-family: $FontPoppins;
@@ -11,18 +12,28 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(gap, 25, 20);
+    }
   }
   & h2 {
     color: $ColorWhite;
     font-size: $FonstSizeFooterNavTitle;
     margin-bottom: 34px;
     transition: all 0.2s;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(font-size, 28, 20);
+      @include adaptiv-360(margin-bottom, 34, 4);
+    }
   }
   & p {
     cursor: pointer;
     font-size: $FonstSizeFooterNavLink;
     color: $MainGray;
     transition: all 0.2s;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(font-size, 24, 16);
+    }
     &:hover {
       transform: scale(1.1);
     }
