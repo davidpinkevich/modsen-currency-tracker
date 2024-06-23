@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { sliceConversion } from "@utils/helpers/getConversion";
 import { useAppDispatch, useAppSelector } from "@hooks/useRedux";
 import { useTheme } from "@hooks/useTheme";
 import { getDataCurrencies } from "@redux/slices/sliceMemory";
@@ -22,10 +23,7 @@ const useConversion = () => {
       if (data && from && to && input.length) {
         const fromValue = data[from].value;
         const toValue = data[to].value;
-
-        const result = (Number(amount) / fromValue) * toValue;
-
-        return result.toFixed(6);
+        return sliceConversion(amount, fromValue, toValue);
       }
       return "";
     }
