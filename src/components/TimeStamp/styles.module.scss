@@ -11,6 +11,10 @@
   align-items: center;
   gap: 20px;
 
+  @media (max-width: $breakPointSM) {
+    font-size: 20px;
+  }
+
   & > span:first-child {
     position: relative;
     display: inline-block;
@@ -32,6 +36,10 @@
     background-color: $ColorGreenShadow;
     border-radius: 50%;
     animation: pulseMainCircle 3s infinite;
+    @media (max-width: $breakPointSM) {
+      left: -5px;
+      bottom: -2px;
+    }
   }
 
   &_white {
