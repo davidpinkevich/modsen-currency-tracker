@@ -12,7 +12,7 @@ const FooterNav: React.FC = () => {
   return (
     <ul
       className={
-        theme === ThemeMode.dark
+        theme === ThemeMode.DARK
           ? styles.footer_nav
           : classNames(styles.footer_nav, styles.footer_nav_white)
       }>

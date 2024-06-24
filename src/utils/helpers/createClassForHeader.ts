@@ -2,22 +2,22 @@ import classNames from "classnames";
 
 import { ThemeMode } from "@src/constants/themeMode";
 
-function createClassForMenu(
+function createClassForHeader(
   open: boolean,
   theme: string,
   mainStyle: string,
   mainStyleOpen: string,
   mainStyleWhite: string
 ) {
-  if (open && theme === ThemeMode.dark) {
+  if (open && theme === ThemeMode.DARK) {
     return classNames(mainStyle, mainStyleOpen);
-  } else if (open && theme === ThemeMode.white) {
+  } else if (open && theme === ThemeMode.WHITE) {
     return classNames(mainStyle, mainStyleWhite, mainStyleOpen);
-  } else if (!open && theme === ThemeMode.dark) {
+  } else if (!open && theme === ThemeMode.DARK) {
     return classNames(mainStyle);
-  } else if (!open && theme === ThemeMode.white) {
+  } else if (!open && theme === ThemeMode.WHITE) {
     return classNames(mainStyle, mainStyleWhite);
   }
 }
 
-export { createClassForMenu };
+export { createClassForHeader };

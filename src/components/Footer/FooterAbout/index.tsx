@@ -13,7 +13,7 @@ const FooterAbout: React.FC = () => {
   return (
     <div
       className={
-        theme === ThemeMode.dark
+        theme === ThemeMode.DARK
           ? styles.footer_about
           : classNames(styles.footer_about, styles.footer_about_white)
       }>

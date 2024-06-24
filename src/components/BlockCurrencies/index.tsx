@@ -19,7 +19,7 @@ const BlockCurrencies: React.FC = () => {
   const loading = useAppSelector(getLoadCurrencies);
 
   const classBlock =
-    theme === ThemeMode.dark
+    theme === ThemeMode.DARK
       ? styles.currencies
       : classNames(styles.currencies, styles.currencies_white);
 

@@ -12,7 +12,7 @@ const FooterCopyright: React.FC = () => {
   return (
     <p
       className={
-        theme === ThemeMode.dark
+        theme === ThemeMode.DARK
           ? styles.copy
           : classNames(styles.copy, styles.copy_white)
       }>
