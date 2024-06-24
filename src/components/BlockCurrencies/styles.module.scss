@@ -1,0 +1,61 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.currencies {
+  font-family: $FontPoppins;
+  display: flex;
+  flex-direction: column;
+  gap: 77px;
+  transition: all 0.2s;
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(gap, 77, 34);
+  }
+  & h2 {
+    position: relative;
+    font-weight: 300;
+    font-size: $FonstSizeCurrencyInfo;
+    color: $ColorWhite;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      max-width: 520px;
+      height: 2px;
+      background-color: rgb(71, 71, 71);
+      bottom: -24px;
+      left: 0;
+    }
+  }
+
+  &_white {
+    & h2 {
+      color: $DarkGray;
+    }
+  }
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(gap, 100, 44);
+    }
+  }
+}
+.block_currencies {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 56px;
+  grid-column-gap: 184px;
+
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(grid-row-gap, 56, 20);
+    grid-column-gap: 40px;
+  }
+
+  @media (max-width: $breakPointMD) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 20px;
+  }
+}

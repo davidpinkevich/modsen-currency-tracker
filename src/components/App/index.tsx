@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { ThemeMode } from "@constants/themeMode";
 import { useTheme } from "@hooks/useTheme";
 
+import { Home } from "@pages/Home";
 import { MainLayout } from "@pages/MainLayout";
 
 import styles from "./styles.module.scss";
@@ -12,7 +13,7 @@ const routes = [
     path: "/",
     element: <MainLayout />,
     children: [
-      { index: true, element: <div>Home</div> },
+      { index: true, element: <Home /> },
       { path: "timeline", element: <div>timeline</div> },
       { path: "card", element: <div>card</div> },
       { path: "contacts", element: <div>contacts</div> },
@@ -25,7 +26,7 @@ const App: React.FC = () => {
   const theme = useTheme();
 
   return (
-    <div className={theme === ThemeMode.dark ? styles.app : styles.app_white}>
+    <div className={theme === ThemeMode.DARK ? styles.app : styles.app_white}>
       <Routes>
         {routes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element}>

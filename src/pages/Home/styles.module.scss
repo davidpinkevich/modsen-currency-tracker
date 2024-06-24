@@ -1,0 +1,11 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.home {
+  width: 100%;
+  padding: 100px 0;
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(padding-top, 100, 30);
+    @include adaptiv-360(padding-bottom, 100, 30);
+  }
+}

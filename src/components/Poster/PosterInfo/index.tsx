@@ -13,7 +13,7 @@ const PosterInfo: React.FC = () => {
       <h1 className={styles.poster_info_title}>Modsen Currency Tracker</h1>
       <p
         className={
-          theme === ThemeMode.dark
+          theme === ThemeMode.DARK
             ? styles.poster_info_describe
             : classNames(
                 styles.poster_info_describe,

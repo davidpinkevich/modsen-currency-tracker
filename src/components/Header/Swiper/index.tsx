@@ -11,20 +11,20 @@ const Swiper: React.FC = () => {
   const dispatch = useAppDispatch();
   const theme = useTheme();
 
-  const handlerButton = () => {
+  const handleButton = () => {
     dispatch(changeTheme());
   };
   return (
     <button
-      onClick={handlerButton}
+      onClick={handleButton}
       className={
-        theme === ThemeMode.dark
+        theme === ThemeMode.DARK
           ? styles.swiper
           : classNames(styles.swiper, styles.swiper_white)
       }>
       <div
         className={
-          theme === ThemeMode.dark
+          theme === ThemeMode.DARK
             ? styles.swiper_button
             : classNames(styles.swiper_button, styles.swiper_button_white)
         }

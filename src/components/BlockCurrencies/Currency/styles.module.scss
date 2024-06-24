@@ -1,0 +1,79 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.currency {
+  font-family: $FontPoppins;
+  cursor: pointer;
+  background-color: rgb(71, 71, 71);
+  border-radius: 8px;
+  border: 1px solid rgb(123, 121, 121);
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  padding: 34px;
+  transition: all 0.2s;
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(padding, 34, 10);
+    @include adaptiv-360(gap, 30, 14);
+  }
+
+  & img {
+    width: 80px;
+    height: 80px;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(width, 80, 46);
+      @include adaptiv-360(height, 80, 46);
+    }
+  }
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 6px 2px rgb(244, 241, 241);
+    @media (max-width: $breakPointMD) {
+      transform: scale(1);
+    }
+  }
+
+  &_white {
+    background-color: rgb(244, 241, 241);
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0px 0px 6px 2px rgb(206, 248, 148);
+      @media (max-width: $breakPointMD) {
+        transform: scale(1);
+      }
+    }
+
+    & h3 {
+      color: $DarkGray;
+    }
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.2s;
+    & h3 {
+      color: $ColorWhite;
+      font-size: $FonstSizeCurrencyTitle;
+      @media (max-width: $breakPointXL) {
+        @include adaptiv-360(font-size, 35, 22);
+      }
+    }
+    & p {
+      color: $DarkGray;
+      font-size: $FonstSizeCurrencyInfo;
+      font-weight: 300;
+      @media (max-width: $breakPointXL) {
+        @include adaptiv-360(font-size, 32, 18);
+      }
+    }
+
+    &_white {
+      & h3 {
+        color: $DarkGray;
+      }
+    }
+  }
+}

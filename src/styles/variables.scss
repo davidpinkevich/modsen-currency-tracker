@@ -2,12 +2,20 @@ $ColorBlack: rgb(3, 3, 4);
 $ColorWhite: rgb(255, 255, 255);
 $MainGray: rgb(217, 217, 217);
 $DarkGray: rgb(134, 119, 119);
+$ColorGreenCircle: rgb(0, 188, 79);
+$ColorGreenShadow: rgb(2, 70, 31);
+
+$ColorGreenCircleWhite: rgb(78, 247, 78);
+$ColorGreenShadowWhite: rgb(207, 251, 207);
+
 $FontPoppins: "Poppins", sans-serif;
 $FontInter: "Inter", sans-serif;
+
+$breakPointESM: 430px;
 $breakPointSM: 576px;
 $breakPointMD: 768px;
 $breakPointLG: 992px;
-$breakPointXL: 1200px;
+$breakPointXL: 1300px;
 
 $FonstSizeHeader: 20px;
 $FonstSizePoster: 25px;
@@ -16,6 +24,9 @@ $FonstSizeFooterAboutTitle: 26px;
 $FonstSizeFooterAboutInfo: 24px;
 $FonstSizeFooterNavTitle: 28px;
 $FonstSizeFooterNavLink: 24px;
+
+$FonstSizeCurrencyTitle: 35px;
+$FonstSizeCurrencyInfo: 32px;
 
 $widthContainer: 1254px;
 

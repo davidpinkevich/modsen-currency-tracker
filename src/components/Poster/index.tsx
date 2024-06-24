@@ -13,7 +13,7 @@ const Poster: React.FC = () => {
   return (
     <article
       className={
-        theme === ThemeMode.dark
+        theme === ThemeMode.DARK
           ? styles.poster
           : classNames(styles.poster, styles.poster_white)
       }>
