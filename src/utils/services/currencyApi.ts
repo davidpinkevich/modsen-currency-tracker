@@ -9,8 +9,7 @@ class CurrencyService {
     { data: { data: TypeDataCurrency } } | undefined
   > {
     try {
-      const response = await axios.get(createQueryCurrencies(NAMES_CURRENCY));
-      return response;
+      return await axios.get(createQueryCurrencies(NAMES_CURRENCY));
     } catch (error) {
       console.error(error);
     }
