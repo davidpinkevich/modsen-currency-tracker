@@ -1,0 +1,32 @@
+@import "@styles/variables.scss";
+
+.filters {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-family: $FontPoppins;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s;
+  gap: 35px;
+  & h2 {
+    transition: all 0.2s;
+    font-size: $FonstSizeTimeseriesFiltersH2;
+    font-weight: 400;
+    color: $ColorWhite;
+  }
+
+  &_white {
+    & h2 {
+      color: $DarkGray;
+    }
+  }
+  &_select {
+    display: flex;
+    gap: 20px;
+  }
+  &_date {
+    display: flex;
+    gap: 20px;
+  }
+}
