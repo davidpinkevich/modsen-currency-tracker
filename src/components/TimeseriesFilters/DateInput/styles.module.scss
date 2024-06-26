@@ -1,0 +1,25 @@
+@import "@styles/variables.scss";
+
+.date {
+  font-family: $FontPoppins;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  & input {
+    appearance: none;
+    cursor: pointer;
+    border: 1px solid $DarkGray;
+    font-size: $FonstSizeTimeseriesDateInput;
+    transition: all 0.2s;
+    background-color: rgb(238, 227, 227);
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+
+  &_white {
+    & input {
+      background-color: $ColorWhite;
+    }
+  }
+}
