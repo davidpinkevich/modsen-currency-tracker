@@ -24,7 +24,7 @@ const CustomLink: React.FC<TypeLinkHeader> = ({ name, path }) => {
     <Link
       onClick={handleClick}
       className={
-        theme === ThemeMode.dark
+        theme === ThemeMode.DARK
           ? styles.link
           : classNames(styles.link, styles.link_white)
       }

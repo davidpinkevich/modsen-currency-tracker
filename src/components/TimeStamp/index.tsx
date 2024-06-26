@@ -12,7 +12,7 @@ const TimeStamp: React.FC<{ timeStamp: number }> = ({ timeStamp }) => {
   return (
     <div
       className={
-        theme === ThemeMode.dark
+        theme === ThemeMode.DARK
           ? styles.timestamp
           : classNames(styles.timestamp, styles.timestamp_white)
       }>

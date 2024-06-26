@@ -13,7 +13,7 @@ interface TypeInitialState {
 }
 
 const initialState: TypeInitialState = {
-  theme: ThemeMode.dark,
+  theme: ThemeMode.DARK,
   timeStamp: 0,
   loading: false,
   data: {}
@@ -32,7 +32,7 @@ const sliceMemory = createSlice({
   reducers: {
     changeTheme: (state) => {
       state.theme =
-        state.theme === ThemeMode.dark ? ThemeMode.white : ThemeMode.dark;
+        state.theme === ThemeMode.DARK ? ThemeMode.WHITE : ThemeMode.DARK;
     },
     changeTimeStamp: (state, action: PayloadAction<number>) => {
       state.timeStamp = action.payload;

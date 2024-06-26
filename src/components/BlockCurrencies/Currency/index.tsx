@@ -22,7 +22,7 @@ const Currency: React.FC<CurrencyItem> = ({
   const theme = useTheme();
   const dispatch = useAppDispatch();
 
-  const handlerClick = () => {
+  const handleClick = () => {
     if (iso) {
       dispatch(changeModal());
       dispatch(changeConversionISOFrom(iso));
@@ -31,22 +31,21 @@ const Currency: React.FC<CurrencyItem> = ({
 
   return (
     <div
-      onClick={handlerClick}
+      onClick={handleClick}
       className={
-        theme === ThemeMode.dark
+        theme === ThemeMode.DARK
           ? styles.currency
           : classNames(styles.currency, styles.currency_white)
       }>
       <img src={img} alt={iso} />
       <div
         className={
-          theme === ThemeMode.dark
+          theme === ThemeMode.DARK
             ? styles.currency_info
             : classNames(styles.currency_info, styles.currency_info_white)
         }>
         <h3>{title}</h3>
-        {loading && <p>Loading...</p>}
-        {!loading && <p>{createRealRate(value)}</p>}
+        <p>{loading ? "Loading..." : createRealRate(value)}</p>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ const App: React.FC = () => {
   const theme = useTheme();
 
   return (
-    <div className={theme === ThemeMode.dark ? styles.app : styles.app_white}>
+    <div className={theme === ThemeMode.DARK ? styles.app : styles.app_white}>
       <Routes>
         {routes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element}>
