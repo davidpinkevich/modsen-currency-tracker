@@ -23,23 +23,23 @@ const Conversion = () => {
   return (
     <div
       className={
-        theme === ThemeMode.dark
+        theme === ThemeMode.DARK
           ? styles.conversion
           : classNames(styles.conversion, styles.conversion_white)
       }>
-      <p>
+      <div className={styles.conversion_info}>
         From: <span>{conversionISO.from}</span>
-      </p>
+      </div>
       <input
         className={styles.conversion_input}
         value={input}
         onChange={handleChange}
         placeholder="Enter amount"
       />
-      <p>
+      <div className={styles.conversion_info}>
         To: <span>{conversionISO.to}</span>
         <p>{result}</p>
-      </p>
+      </div>
       <div className={styles.conversion_items}>
         {CURRENCY_ITEMS.QUOTES.map((item, index) => {
           return (

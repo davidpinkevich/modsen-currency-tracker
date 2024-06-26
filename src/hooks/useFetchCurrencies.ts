@@ -10,6 +10,7 @@ import {
 const useFetchCurrencies = (time: number) => {
   const timeStamp = useAppSelector(getTimeStamp);
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     const interval = setInterval(() => {
       const newTimeStamp = Date.now();
@@ -19,6 +20,7 @@ const useFetchCurrencies = (time: number) => {
         dispatch(fetchCurrencies());
       }
     }, 1000);
+
     return () => clearInterval(interval);
   }, [dispatch, timeStamp]);
 

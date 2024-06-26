@@ -29,7 +29,7 @@ const Modal = () => {
         <div onClick={handleModalShadow} className={styles.modal}>
           <div
             className={
-              theme === ThemeMode.dark
+              theme === ThemeMode.DARK
                 ? styles.modal_block
                 : classNames(styles.modal_block, styles.modal_block_white)
             }>
