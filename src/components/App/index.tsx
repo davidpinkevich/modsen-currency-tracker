@@ -5,6 +5,7 @@ import { useTheme } from "@hooks/useTheme";
 
 import { Home } from "@pages/Home";
 import { MainLayout } from "@pages/MainLayout";
+import Timeline from "@pages/Timeline";
 
 import styles from "./styles.module.scss";
 
@@ -14,7 +15,7 @@ const routes = [
     element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "timeline", element: <div>timeline</div> },
+      { path: "timeline", element: <Timeline /> },
       { path: "card", element: <div>card</div> },
       { path: "contacts", element: <div>contacts</div> },
       { path: "*", element: <div>Note found</div> }
