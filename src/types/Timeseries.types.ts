@@ -9,7 +9,8 @@ interface TypeParamsTimeseries {
 }
 export interface PropsTimeline {
   dataTimeseries: TypeDataTimeseries | undefined;
-  fetchTimeseries: () => void;
+  paramsTimeseries: TypeParamsTimeseries;
+  fetchTimeseries: (params: TypeParamsTimeseries) => void;
 }
 
 export interface PropsSelectCurrency {
@@ -32,4 +33,8 @@ export interface PropsInputDate {
   type: DirectionOptions.START | DirectionOptions.END;
   changeParamsTimeseriesStart: (value: string) => void;
   changeParamsTimeseriesEnd: (value: string) => void;
+}
+
+export interface PropsTimeseriesGraph {
+  dataTimeseries: TypeDataTimeseries | undefined;
 }

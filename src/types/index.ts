@@ -11,7 +11,8 @@ import {
   type PropsInputDate,
   type PropsSelectCurrency,
   type PropsTimeline,
-  type PropsTimeseriesFilters
+  type PropsTimeseriesFilters,
+  type PropsTimeseriesGraph
 } from "./Timeseries.types";
 
 export type {
@@ -20,6 +21,7 @@ export type {
   PropsSelectCurrency,
   PropsTimeline,
   PropsTimeseriesFilters,
+  PropsTimeseriesGraph,
   TypeCurrencyItems,
   TypeDataCurrency,
   TypeDataTimeseries,
