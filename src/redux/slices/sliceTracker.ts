@@ -41,13 +41,8 @@ const initialState: TypeInitialState = {
 
 export const fetchTimeseries = createAsyncThunk(
   "sliceTracker/fetchTimeseries",
-  async () => {
-    return await serviceTimeseries.getTimeseries(
-      "USD",
-      "EUR",
-      "2024-05-12",
-      "2024-06-12"
-    );
+  async (params: { from: string; to: string; start: string; end: string }) => {
+    return await serviceTimeseries.getTimeseries(params);
   }
 );
 
