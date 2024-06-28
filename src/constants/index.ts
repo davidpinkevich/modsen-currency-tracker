@@ -1,4 +1,4 @@
-import { CURRENCY_ITEMS } from "./currencyItems";
+import { CURRENCY_ITEMS, SELECT_QUOTES } from "./currencyItems";
 import { DATE_INFO } from "./dateInfo";
 import { DirectionOptions } from "./directionOptions";
 import { LINKS_HEADER } from "./linksHeader";
@@ -11,5 +11,6 @@ export {
   DirectionOptions,
   LINKS_HEADER,
   NAMES_CURRENCY,
-  ROUNDING_CONVERSION
+  ROUNDING_CONVERSION,
+  SELECT_QUOTES
 };
