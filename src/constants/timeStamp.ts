@@ -1,0 +1,3 @@
+const TIMESTAMP = 86400000;
+
+export { TIMESTAMP };

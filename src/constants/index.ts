@@ -4,6 +4,7 @@ import { DirectionOptions } from "./directionOptions";
 import { LINKS_HEADER } from "./linksHeader";
 import { NAMES_CURRENCY } from "./NamesCurrency";
 import { ROUNDING_CONVERSION, ROUNDING_GRAPH } from "./roundingConversion";
+import { TIMESTAMP } from "./timeStamp";
 
 export {
   CURRENCY_ITEMS,
@@ -13,5 +14,6 @@ export {
   NAMES_CURRENCY,
   ROUNDING_CONVERSION,
   ROUNDING_GRAPH,
-  SELECT_QUOTES
+  SELECT_QUOTES,
+  TIMESTAMP
 };
