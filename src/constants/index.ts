@@ -3,7 +3,7 @@ import { DATE_INFO } from "./dateInfo";
 import { DirectionOptions } from "./directionOptions";
 import { LINKS_HEADER } from "./linksHeader";
 import { NAMES_CURRENCY } from "./NamesCurrency";
-import { ROUNDING_CONVERSION } from "./roundingConversion";
+import { ROUNDING_CONVERSION, ROUNDING_GRAPH } from "./roundingConversion";
 
 export {
   CURRENCY_ITEMS,
@@ -12,5 +12,6 @@ export {
   LINKS_HEADER,
   NAMES_CURRENCY,
   ROUNDING_CONVERSION,
+  ROUNDING_GRAPH,
   SELECT_QUOTES
 };
