@@ -1,5 +1,6 @@
 import classNames from "classnames";
 
+import { ThemeMode } from "@constants/themeMode";
 import { useModal } from "@hooks/useModal";
 import cross from "@assets/icons/cross.svg";
 import { changeModal } from "@redux/slices/sliceTracker";
@@ -8,9 +9,7 @@ import { Conversion } from "./Conversion";
 
 import styles from "./styles.module.scss";
 
-import { ThemeMode } from "@src/constants/themeMode";
-
-const Modal = () => {
+const Modal: React.FC = () => {
   const { theme, openModal, dispatch } = useModal(styles);
 
   const handleModalShadow = (event: React.MouseEvent<HTMLDivElement>) => {
