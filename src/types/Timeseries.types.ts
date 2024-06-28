@@ -1,5 +1,5 @@
 import { type DirectionOptions } from "@constants/directionOptions";
-import { type TypeDataTimeseries } from "@src/types";
+import { type TypeDataTimeseries, type TypeItemTimeseries } from "@src/types";
 
 interface TypeParamsTimeseries {
   from: string;
@@ -36,5 +36,5 @@ export interface PropsInputDate {
 }
 
 export interface PropsTimeseriesGraph {
-  dataTimeseries: TypeDataTimeseries | undefined;
+  dataTimeseries: TypeItemTimeseries[] | undefined;
 }
