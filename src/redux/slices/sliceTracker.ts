@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import { getCurrentDate, getThirtyDaysAgoDate } from "@utils/helpers/getDate";
 import { serviceTimeseries } from "@utils/services/timeseriesApi";
-import { type TypeDataTimeseries } from "@src/types";
+import { type TypeItemTimeseries } from "@src/types";
 
 interface TypeInitialState {
   openMenu: boolean;
@@ -19,7 +19,7 @@ interface TypeInitialState {
     start: string;
     end: string;
   };
-  dataTimeseries: TypeDataTimeseries | undefined;
+  dataTimeseries: TypeItemTimeseries[] | undefined;
 }
 
 const initialState: TypeInitialState = {

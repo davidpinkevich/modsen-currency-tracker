@@ -2,7 +2,7 @@ import { Component } from "react";
 import { connect } from "react-redux";
 import classNames from "classnames";
 
-import { CURRENCY_ITEMS, DirectionOptions } from "@constants/index";
+import { DirectionOptions, SELECT_QUOTES } from "@constants/index";
 import { ThemeMode } from "@constants/themeMode";
 import { findCurrentSelect } from "@utils/helpers/findCurrentSelect";
 import arrow from "@assets/icons/arrow-select.svg";
@@ -51,7 +51,7 @@ class SelectCurrency extends Component<
             : classNames(styles.select, styles.select_white)
         }>
         <button className={styles.select_btn} onClick={this.toggleDropdown}>
-          <p>{findCurrentSelect(CURRENCY_ITEMS, paramsTimeseries[type])}</p>
+          <p>{findCurrentSelect(SELECT_QUOTES, paramsTimeseries[type])}</p>
           <img
             className={
               this.state.isOpen
@@ -64,7 +64,7 @@ class SelectCurrency extends Component<
         </button>
         {this.state.isOpen && (
           <ul className={styles.select_dropdown}>
-            {CURRENCY_ITEMS.QUOTES.map((currency) => (
+            {SELECT_QUOTES.map((currency) => (
               <li
                 key={currency.iso}
                 onClick={() => this.handleChange(currency.iso)}>

@@ -1,4 +1,4 @@
-import { type TypeDataTimeseries } from "@src/types";
+import { type TypeItemTimeseries } from "@src/types";
 
 import axios, { type AxiosInstance } from "axios";
 
@@ -25,7 +25,7 @@ class TimeseriesService {
     to: string;
     start: string;
     end: string;
-  }): Promise<TypeDataTimeseries | undefined> {
+  }): Promise<TypeItemTimeseries[] | undefined> {
     try {
       const response = await this.axiosInstance.get(`${from}/${to}/history`, {
         params: {
