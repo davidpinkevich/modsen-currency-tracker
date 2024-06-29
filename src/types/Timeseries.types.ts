@@ -10,6 +10,7 @@ interface TypeParamsTimeseries {
 export interface PropsTimeline {
   dataTimeseries: TypeItemTimeseries[] | undefined;
   paramsTimeseries: TypeParamsTimeseries;
+  loading: boolean;
   fetchTimeseries: (params: TypeParamsTimeseries) => void;
 }
 
@@ -37,4 +38,5 @@ export interface PropsInputDate {
 
 export interface PropsTimeseriesGraph {
   dataTimeseries: TypeItemTimeseries[] | undefined;
+  theme: string;
 }
