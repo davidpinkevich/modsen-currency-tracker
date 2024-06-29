@@ -1,0 +1,59 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.loading {
+  font-family: $FontPoppins;
+  flex: 1 0 auto;
+  height: 100%;
+  text-align: center;
+  font-size: 54px;
+  color: $ColorWhite;
+  margin-top: 20%;
+
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(font-size, 54, 24);
+  }
+
+  & span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: $ColorWhite;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(width, 10, 3);
+      @include adaptiv-360(height, 10, 3);
+    }
+  }
+
+  &_white {
+    color: $DarkGray;
+
+    & span {
+      background-color: $DarkGray;
+    }
+  }
+
+  &_first {
+    animation: pulse 0.4s ease 0s infinite;
+  }
+  &_second {
+    animation: pulse 0.4s ease 0.1s infinite;
+  }
+  &_third {
+    animation: pulse 0.4s ease 0.2s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
