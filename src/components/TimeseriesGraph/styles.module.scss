@@ -1,0 +1,9 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.graph {
+  margin-bottom: 100px;
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(margin-bottom, 100, 20);
+  }
+}

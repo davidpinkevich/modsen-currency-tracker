@@ -1,13 +1,17 @@
 @import "@styles/variables.scss";
-
+@import "@styles/mixins.scss";
 .select {
   font-family: $FontPoppins;
   color: $ColorWhite;
   background-color: $ColorBlack;
   border-radius: 8px;
   position: relative;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   transition: all 0.2s;
+  @media (max-width: $breakPointSM) {
+    max-width: 100%;
+  }
 
   &_white {
     color: $ColorBlack;
@@ -28,6 +32,13 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(font-size, 30, 18);
+      @include adaptiv-360(padding-top, 10, 8);
+      @include adaptiv-360(padding-bottom, 10, 8);
+      @include adaptiv-360(padding-left, 20, 10);
+      @include adaptiv-360(padding-right, 20, 10);
+    }
   }
 
   &_img {
@@ -52,6 +63,9 @@
     width: 100%;
     z-index: 10;
     animation: opacitySelect 0.2s;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(font-size, 26, 16);
+    }
 
     & li {
       padding: 15px 20px;

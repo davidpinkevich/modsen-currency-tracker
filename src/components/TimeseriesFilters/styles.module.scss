@@ -1,19 +1,30 @@
 @import "@styles/variables.scss";
+@import "@styles/mixins.scss";
 
 .filters {
-  margin-top: 100px;
-  margin-bottom: 100px;
   font-family: $FontPoppins;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   transition: all 0.2s;
+  margin-top: 100px;
+  margin-bottom: 100px;
   gap: 35px;
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(margin-top, 100, 30);
+    @include adaptiv-360(margin-bottom, 100, 20);
+    @include adaptiv-360(gap, 35, 20);
+    align-items: flex-start;
+  }
   & h2 {
     transition: all 0.2s;
     font-size: $FonstSizeTimeseriesFiltersH2;
     font-weight: 400;
     color: $ColorWhite;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(font-size, 30, 18);
+    }
   }
 
   &_white {
@@ -23,10 +34,28 @@
   }
   &_select {
     display: flex;
+    justify-content: center;
     gap: 20px;
+    width: 100%;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(gap, 20, 10);
+      justify-content: flex-start;
+    }
+    @media (max-width: $breakPointSM) {
+      flex-direction: column;
+    }
   }
   &_date {
     display: flex;
+    justify-content: center;
     gap: 20px;
+    width: 100%;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(gap, 20, 10);
+      justify-content: flex-start;
+    }
+    @media (max-width: $breakPointMD) {
+      flex-direction: column;
+    }
   }
 }
