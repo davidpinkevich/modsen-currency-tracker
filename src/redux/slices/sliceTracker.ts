@@ -88,7 +88,8 @@ const sliceTracker = createSlice({
   selectors: {
     getOpenMenu: (state) => state.openMenu,
     getOpenModal: (state) => state.openModal,
-    getConversionISO: (state) => state.conversionISO
+    getConversionISO: (state) => state.conversionISO,
+    getLoadingGraph: (state) => state.loading
   }
 });
 
@@ -102,6 +103,6 @@ export const {
   changeParamsTimeseriesStart,
   changeParamsTimeseriesEnd
 } = sliceTracker.actions;
-export const { getOpenMenu, getOpenModal, getConversionISO } =
+export const { getOpenMenu, getOpenModal, getConversionISO, getLoadingGraph } =
   sliceTracker.selectors;
 export default sliceTracker.reducer;
