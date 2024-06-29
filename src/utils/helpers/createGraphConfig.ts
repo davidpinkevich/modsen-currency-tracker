@@ -1,6 +1,6 @@
-import { ROUNDING_GRAPH } from "@src/constants";
-
 import { type TypeItemTimeseries } from "@src/types";
+
+import { ROUNDING_GRAPH } from "@src/constants";
 
 const createGraphConfig = (
   dataTimeseries: TypeItemTimeseries[] | undefined
@@ -62,6 +62,43 @@ const createGraphConfig = (
     }
   };
 
+  const cross = {
+    id: "cross",
+    afterDatasetsDraw(chart: any) {
+      const {
+        ctx,
+        tooltip,
+        chartArea: { left, right },
+        scales: { x, y }
+      } = chart;
+      if (tooltip._active && tooltip._active.length) {
+        ctx.beginPath();
+        ctx.setLineDash([5, 5]);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "red";
+        ctx.moveTo(left, y.getPixelForValue(tooltip.dataPoints[0].raw.c));
+        ctx.lineTo(right, y.getPixelForValue(tooltip.dataPoints[0].raw.c));
+        ctx.stroke();
+        ctx.closePath();
+        ctx.setLineDash([]);
+
+        ctx.beginPath();
+        ctx.fillRect(0, 0, 0, 0);
+        ctx.fillStyle = "rgb(134, 119, 119)";
+        ctx.font = "bold 14px Poppins";
+        ctx.fillText(
+          tooltip.dataPoints[0].raw.c,
+          left + 12,
+          y.getPixelForValue(tooltip.dataPoints[0].raw.c) - 4
+        );
+
+        chart.canvas.style.cursor = "crosshair";
+      } else {
+        chart.canvas.style.cursor = "default";
+      }
+    }
+  };
+
   const options = {
     parsing: {
       xAxisKey: "x",
@@ -108,7 +145,7 @@ const createGraphConfig = (
     }
   };
 
-  const plugins = [candleStick];
+  const plugins = [candleStick, cross];
 
   return { data, options, plugins };
 };
