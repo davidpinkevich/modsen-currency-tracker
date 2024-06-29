@@ -1,5 +1,7 @@
 import classNames from "classnames";
 
+import { Loading } from "@components/Loading";
+
 import { ThemeMode } from "@constants/themeMode";
 import { createRealRate } from "@utils/helpers/createRealRate";
 import { useAppDispatch } from "@hooks/useRedux";
@@ -45,7 +47,7 @@ const Currency: React.FC<CurrencyItem> = ({
             : classNames(styles.currency_info, styles.currency_info_white)
         }>
         <h3>{title}</h3>
-        <p>{loading ? "Loading..." : createRealRate(value)}</p>
+        {loading ? <Loading value="" /> : <p>{createRealRate(value)}</p>}
       </div>
     </div>
   );
