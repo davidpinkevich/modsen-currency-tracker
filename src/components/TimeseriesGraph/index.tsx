@@ -10,6 +10,8 @@ import { type PropsTimeseriesGraph } from "@src/types";
 
 import "chartjs-adapter-date-fns";
 
+import { VeiwSuccess } from "./VeiwSuccess";
+
 import styles from "./styles.module.scss";
 
 import {
@@ -51,6 +53,7 @@ class TimeseriesGraph extends Component<PropsTimeseriesGraph> {
           ) : (
             <p>Please indicate a period of 30 days</p>
           )}
+          {dataTimeseries.length >= 30 && <VeiwSuccess />}
         </div>
       );
     }
