@@ -1,0 +1,44 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.success {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  font-family: $FontPoppins;
+  font-size: $FontSizeVeiwSuccess;
+  background-color: $ColorGreenCircle;
+  line-height: 120%;
+  border-radius: 8px;
+  color: $ColorWhite;
+  text-align: center;
+  padding: 20px;
+  width: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: hidden 2s forwards;
+  opacity: 1;
+
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(font-size, 32, 22);
+  }
+
+  @media (max-width: $breakPointSM) {
+    right: calc(50% - 150px);
+  }
+}
+
+@keyframes hidden {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
