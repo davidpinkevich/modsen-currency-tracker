@@ -27,10 +27,6 @@ export interface PropsTimeseriesFilters {
   theme: string;
 }
 
-export interface PropsVeiwSuccess {
-  view: boolean;
-}
-
 export interface PropsInputDate {
   paramsTimeseries: TypeParamsTimeseries;
   loading: boolean;
