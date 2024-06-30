@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 
-import { ThemeMode } from "@constants/themeMode";
 import { useTheme } from "@hooks/useTheme";
 
 import { Home } from "@pages/Home";
@@ -24,10 +23,12 @@ const routes = [
 ];
 
 const App: React.FC = () => {
-  const theme = useTheme();
+  const darkTheme = useTheme();
+
+  const classApp = darkTheme ? styles.app : styles.app_white;
 
   return (
-    <div className={theme === ThemeMode.DARK ? styles.app : styles.app_white}>
+    <div className={classApp}>
       <Routes>
         {routes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element}>

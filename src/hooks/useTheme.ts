@@ -1,10 +1,11 @@
+import { ThemeMode } from "@constants/themeMode";
 import { useAppSelector } from "@hooks/useRedux";
 import { getTheme } from "@redux/slices/sliceMemory";
 
 const useTheme = () => {
-  const theme = useAppSelector(getTheme);
+  const dark = useAppSelector(getTheme);
 
-  return theme;
+  return dark === ThemeMode.DARK;
 };
 
 export { useTheme };

@@ -1,12 +1,13 @@
-import { createClassForHeader } from "@utils/helpers/createClassForHeader";
 import { useAppDispatch, useAppSelector } from "@hooks/useRedux";
 import { useTheme } from "@hooks/useTheme";
 import { changeMenu, getOpenMenu } from "@redux/slices/sliceTracker";
 
+import { createClassBurger } from "./createClassBurger";
+
 import styles from "./styles.module.scss";
 
 const Burger: React.FC = () => {
-  const theme = useTheme();
+  const themeDark = useTheme();
   const open = useAppSelector(getOpenMenu);
   const dispatch = useAppDispatch();
 
@@ -16,18 +17,18 @@ const Burger: React.FC = () => {
 
   return (
     <button
-      className={createClassForHeader(
+      className={createClassBurger(
         open,
-        theme,
+        themeDark,
         styles.burger,
         styles.burger_open,
         styles.burger_white
       )}
       onClick={handleButton}>
       <span
-        className={createClassForHeader(
+        className={createClassBurger(
           open,
-          theme,
+          themeDark,
           styles.burger_span,
           styles.burger_span_open,
           styles.burger_span_white

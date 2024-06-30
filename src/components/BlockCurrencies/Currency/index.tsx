@@ -1,6 +1,5 @@
 import classNames from "classnames";
 
-import { ThemeMode } from "@constants/themeMode";
 import { createRealRate } from "@utils/helpers/createRealRate";
 import { useAppDispatch } from "@hooks/useRedux";
 import { useTheme } from "@hooks/useTheme";
@@ -21,7 +20,7 @@ const Currency: React.FC<CurrencyItem> = ({
   iso,
   img
 }) => {
-  const theme = useTheme();
+  const darkTheme = useTheme();
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
@@ -31,21 +30,18 @@ const Currency: React.FC<CurrencyItem> = ({
     }
   };
 
+  const classCurrency = darkTheme
+    ? styles.currency
+    : classNames(styles.currency, styles.currency_white);
+
+  const classCurrencyInfo = darkTheme
+    ? styles.currency_info
+    : classNames(styles.currency_info, styles.currency_info_white);
+
   return (
-    <div
-      onClick={handleClick}
-      className={
-        theme === ThemeMode.DARK
-          ? styles.currency
-          : classNames(styles.currency, styles.currency_white)
-      }>
+    <div onClick={handleClick} className={classCurrency}>
       <img src={img} alt={iso} />
-      <div
-        className={
-          theme === ThemeMode.DARK
-            ? styles.currency_info
-            : classNames(styles.currency_info, styles.currency_info_white)
-        }>
+      <div className={classCurrencyInfo}>
         <h3>{title}</h3>
         {loading ? <Loading value="" /> : <p>{createRealRate(value)}</p>}
       </div>

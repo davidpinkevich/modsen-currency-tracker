@@ -1,6 +1,5 @@
 import classNames from "classnames";
 
-import { ThemeMode } from "@constants/themeMode";
 import { useModal } from "@hooks/useModal";
 import cross from "@assets/icons/cross.svg";
 import { changeModal } from "@redux/slices/sliceTracker";
@@ -10,7 +9,7 @@ import { Conversion } from "./Conversion";
 import styles from "./styles.module.scss";
 
 const Modal: React.FC = () => {
-  const { theme, openModal, dispatch } = useModal(styles);
+  const { darkTheme, openModal, dispatch } = useModal(styles);
 
   const handleModalShadow = (event: React.MouseEvent<HTMLDivElement>) => {
     if ((event.target as HTMLElement).classList.contains(styles.modal)) {
@@ -22,16 +21,15 @@ const Modal: React.FC = () => {
     dispatch(changeModal());
   };
 
+  const classModal = darkTheme
+    ? styles.modal_block
+    : classNames(styles.modal_block, styles.modal_block_white);
+
   return (
     <>
       {openModal && (
         <div onClick={handleModalShadow} className={styles.modal}>
-          <div
-            className={
-              theme === ThemeMode.DARK
-                ? styles.modal_block
-                : classNames(styles.modal_block, styles.modal_block_white)
-            }>
+          <div className={classModal}>
             <button onClick={handleButton}>
               <img src={cross} alt="close" />
             </button>

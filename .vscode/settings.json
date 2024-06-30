@@ -41,6 +41,6 @@
   "code-runner.clearPreviousOutput": true,
   "code-runner.saveFileBeforeRun": true,
   "code-runner.showExecutionMessage": false,
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "editor.formatOnSave": true
 }

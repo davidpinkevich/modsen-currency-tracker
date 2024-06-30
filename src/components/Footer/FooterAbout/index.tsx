@@ -1,6 +1,5 @@
 import classNames from "classnames";
 
-import { ThemeMode } from "@constants/themeMode";
 import graph from "@assets/icons/graph.svg";
 
 import styles from "./styles.module.scss";
@@ -8,15 +7,14 @@ import styles from "./styles.module.scss";
 import { useTheme } from "@src/hooks/useTheme";
 
 const FooterAbout: React.FC = () => {
-  const theme = useTheme();
+  const darkTheme = useTheme();
+
+  const classFooterAbout = darkTheme
+    ? styles.footer_about
+    : classNames(styles.footer_about, styles.footer_about_white);
 
   return (
-    <div
-      className={
-        theme === ThemeMode.DARK
-          ? styles.footer_about
-          : classNames(styles.footer_about, styles.footer_about_white)
-      }>
+    <div className={classFooterAbout}>
       <div className={styles.footer_about_title}>
         <img src={graph} alt="graph" />
         <h2>Modsen Currency Tracker</h2>

@@ -6,7 +6,7 @@ import { getOpenModal } from "@redux/slices/sliceTracker";
 import { useTheme } from "./useTheme";
 
 const useModal = (styles: Record<string, string>) => {
-  const theme = useTheme();
+  const darkTheme = useTheme();
   const openModal = useAppSelector(getOpenModal);
   const dispatch = useAppDispatch();
 
@@ -18,7 +18,7 @@ const useModal = (styles: Record<string, string>) => {
     }
   }, [openModal]);
 
-  return { theme, openModal, dispatch };
+  return { darkTheme, openModal, dispatch };
 };
 
 export { useModal };

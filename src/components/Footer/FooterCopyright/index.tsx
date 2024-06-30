@@ -1,21 +1,18 @@
 import classNames from "classnames";
 
-import { ThemeMode } from "@constants/themeMode";
-
 import styles from "./styles.module.scss";
 
 import { useTheme } from "@src/hooks/useTheme";
 
 const FooterCopyright: React.FC = () => {
-  const theme = useTheme();
+  const darkTheme = useTheme();
+
+  const classFooterCopyright = darkTheme
+    ? styles.copy
+    : classNames(styles.copy, styles.copy_white);
 
   return (
-    <p
-      className={
-        theme === ThemeMode.DARK
-          ? styles.copy
-          : classNames(styles.copy, styles.copy_white)
-      }>
+    <p className={classFooterCopyright}>
       Startsup © 2023-2024, All Rights Reserved
     </p>
   );

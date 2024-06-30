@@ -47,9 +47,6 @@ const sliceMemory = createSlice({
         state.loading = false;
         state.data = action.payload?.data.data;
       });
-    // .addCase(fetchCurrencies.rejected, (state) => {
-    //   state.loading = false;
-    // });
   },
   selectors: {
     getTheme: (state) => state.theme,

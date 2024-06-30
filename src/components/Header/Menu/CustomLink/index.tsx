@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
 
-import { ThemeMode } from "@constants/themeMode";
 import { getLocation } from "@utils/helpers/getLocation";
 import { useTheme } from "@hooks/useTheme";
 import { changeMenu } from "@redux/slices/sliceTracker";
@@ -12,7 +11,7 @@ import styles from "./styles.module.scss";
 import { useAppDispatch } from "@src/hooks/useRedux";
 
 const CustomLink: React.FC<TypeLinkHeader> = ({ name, path }) => {
-  const theme = useTheme();
+  const darkTheme = useTheme();
   const { pathname } = useLocation();
   const dispatch = useAppDispatch();
 
@@ -20,15 +19,12 @@ const CustomLink: React.FC<TypeLinkHeader> = ({ name, path }) => {
     dispatch(changeMenu(false));
   };
 
+  const classCustomLink = darkTheme
+    ? styles.link
+    : classNames(styles.link, styles.link_white);
+
   return (
-    <Link
-      onClick={handleClick}
-      className={
-        theme === ThemeMode.DARK
-          ? styles.link
-          : classNames(styles.link, styles.link_white)
-      }
-      to={path}>
+    <Link onClick={handleClick} className={classCustomLink} to={path}>
       <p
         className={
           getLocation(pathname) === path
