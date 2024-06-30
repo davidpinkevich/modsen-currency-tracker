@@ -5,6 +5,10 @@ import {
   type TypeDataTimeseries,
   type TypeItemTimeseries
 } from "./DataTimeseries.types";
+import {
+  type TypeErrorBoundaryProps,
+  type TypeErrorBoundaryState
+} from "./ErrorBoundary.types";
 import { type TypeLinkHeader } from "./LinkHeader.types";
 import { type TypeRoundingConversion } from "./RoundingConversion.types";
 import {
@@ -25,6 +29,8 @@ export type {
   TypeCurrencyItems,
   TypeDataCurrency,
   TypeDataTimeseries,
+  TypeErrorBoundaryProps,
+  TypeErrorBoundaryState,
   TypeItemTimeseries,
   TypeLinkHeader,
   TypeRoundingConversion
