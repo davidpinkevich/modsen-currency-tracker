@@ -8,7 +8,6 @@
   text-align: center;
   font-size: 54px;
   color: $ColorWhite;
-  margin-top: 20%;
 
   @media (max-width: $breakPointXL) {
     @include adaptiv-360(font-size, 54, 24);
