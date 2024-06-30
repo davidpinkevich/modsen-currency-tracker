@@ -1,7 +1,5 @@
 import classNames from "classnames";
 
-import { Loading } from "@components/Loading";
-
 import { ThemeMode } from "@constants/themeMode";
 import { createRealRate } from "@utils/helpers/createRealRate";
 import { useAppDispatch } from "@hooks/useRedux";
@@ -11,6 +9,8 @@ import {
   changeModal
 } from "@redux/slices/sliceTracker";
 import { type CurrencyItem } from "@src/types";
+
+import { Loading } from "@components/Loading";
 
 import styles from "./styles.module.scss";
 
