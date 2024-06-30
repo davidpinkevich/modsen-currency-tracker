@@ -43,13 +43,19 @@ class SelectCurrency extends Component<
 
   render() {
     const { paramsTimeseries, type, theme } = this.props;
+
+    const filter =
+      type === DirectionOptions.FROM
+        ? DirectionOptions.TO
+        : DirectionOptions.FROM;
+
+    const classSelectCurrency =
+      theme === ThemeMode.DARK
+        ? styles.select
+        : classNames(styles.select, styles.select_white);
+
     return (
-      <div
-        className={
-          theme === ThemeMode.DARK
-            ? styles.select
-            : classNames(styles.select, styles.select_white)
-        }>
+      <div className={classSelectCurrency}>
         <button className={styles.select_btn} onClick={this.toggleDropdown}>
           <p>{findCurrentSelect(SELECT_QUOTES, paramsTimeseries[type])}</p>
           <img
@@ -64,7 +70,9 @@ class SelectCurrency extends Component<
         </button>
         {this.state.isOpen && (
           <ul className={styles.select_dropdown}>
-            {SELECT_QUOTES.map((currency) => (
+            {SELECT_QUOTES.filter(
+              (item) => item.iso !== paramsTimeseries[filter]
+            ).map((currency) => (
               <li
                 key={currency.iso}
                 onClick={() => this.handleChange(currency.iso)}>

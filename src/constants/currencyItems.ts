@@ -77,10 +77,6 @@ const SELECT_QUOTES = [
     iso: "USD"
   },
   {
-    title: "Argentine Peso",
-    iso: "ARS"
-  },
-  {
     title: "Canadian Dollar",
     iso: "CAD"
   },
