@@ -39,15 +39,15 @@ class TimeseriesGraph extends Component<PropsTimeseriesGraph> {
   render() {
     const { dataTimeseries, theme } = this.props;
 
+    const classTimeseriesGraph =
+      theme === ThemeMode.DARK
+        ? styles.graph
+        : classNames(styles.graph, styles.graph_white);
+
     if (dataTimeseries?.length) {
       const { data, options, plugins } = createGraphConfig(dataTimeseries);
       return (
-        <div
-          className={
-            theme === ThemeMode.DARK
-              ? styles.graph
-              : classNames(styles.graph, styles.graph_white)
-          }>
+        <div className={classTimeseriesGraph}>
           {dataTimeseries.length >= 30 ? (
             <Bar options={options} data={data} plugins={plugins} />
           ) : (

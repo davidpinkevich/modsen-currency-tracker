@@ -32,13 +32,13 @@ class DateInput extends Component<PropsInputDate> {
   render() {
     const { paramsTimeseries, type, theme } = this.props;
 
+    const classDateInput =
+      theme === ThemeMode.DARK
+        ? styles.date
+        : classNames(styles.date, styles.date_white);
+
     return (
-      <div
-        className={
-          theme === ThemeMode.DARK
-            ? styles.date
-            : classNames(styles.date, styles.date_white)
-        }>
+      <div className={classDateInput}>
         <h2>{type === DirectionOptions.START ? "Start" : "End"} period:</h2>
         <input
           type="date"
