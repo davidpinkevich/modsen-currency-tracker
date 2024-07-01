@@ -2,7 +2,10 @@
 @import "@styles/mixins.scss";
 
 .timeline {
+  margin: 0 auto;
   margin-bottom: 120px;
+  padding: 0 15px;
+  max-width: $widthContainer;
   @media (max-width: $breakPointXL) {
     @include adaptiv-360(margin-bottom, 120, 20);
   }
