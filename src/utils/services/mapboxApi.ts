@@ -14,17 +14,13 @@ class MapboxService {
     });
   }
 
-  async getBanks(
-    language: string,
-    limit: number,
-    proximity: number[]
-  ): Promise<MapboxItem[] | undefined> {
+  async getBanks(proximity: number[]): Promise<MapboxItem[] | undefined> {
     try {
       const response: TypeDataMapbox = await this.axiosInstance.get("", {
         params: {
           access_token: process.env.APIKEY_MAP,
-          language,
-          limit,
+          language: "en",
+          limit: 25,
           proximity: proximity.join(",")
         }
       });
