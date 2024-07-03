@@ -50,20 +50,20 @@ class BankSearch extends Component<PropsBankSearch> {
             onChange={this.handleInput}
           />
           <img src={search} alt="search" />
+          {!!value.trim().length &&
+            !!filters.length &&
+            filters[0].title !== value && (
+              <div className={classBankSearchPopup}>
+                {filters.map((item) => (
+                  <p
+                    key={item.title}
+                    onClick={() => this.handleClick(item.title)}>
+                    {item.title}
+                  </p>
+                ))}
+              </div>
+            )}
         </div>
-        {!!value.trim().length &&
-          !!filters.length &&
-          filters[0].title !== value && (
-            <div className={classBankSearchPopup}>
-              {filters.map((item) => (
-                <p
-                  key={item.title}
-                  onClick={() => this.handleClick(item.title)}>
-                  {item.title}
-                </p>
-              ))}
-            </div>
-          )}
       </div>
     );
   }
