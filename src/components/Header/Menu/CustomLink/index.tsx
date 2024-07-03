@@ -8,7 +8,7 @@ import { type TypeLinkHeader } from "@src/types";
 
 import styles from "./styles.module.scss";
 
-import { useAppDispatch } from "@src/hooks/useRedux";
+import { useAppDispatch } from "@hooks/useRedux";
 
 const CustomLink: React.FC<TypeLinkHeader> = ({ name, path }) => {
   const darkTheme = useTheme();
