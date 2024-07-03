@@ -1,27 +1,30 @@
 import { Component } from "react";
 import { Map } from "react-map-gl";
 
-import { updateDataBanks } from "@utils/helpers/updateDataBanks";
+import {
+  filterUpdateDataBanks,
+  updateDataBanks
+} from "@utils/helpers/updateDataBanks";
 import { serviceMapbox } from "@utils/services/mapboxApi";
-import { type PropsBankMap } from "@src/types";
+import { type StateBankMap } from "@src/types";
 
 import { BankMarker } from "./BankMarker";
+import BankSearch from "./BankSearch";
 
 import "mapbox-gl/dist/mapbox-gl.css";
+import styles from "./styles.module.scss";
 
-class BankMap extends Component<{}, PropsBankMap> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      view: {
-        longitude: 0,
-        latitude: 0,
-        zoom: 10
-      },
-      bankID: null,
-      data: []
-    };
-  }
+class BankMap extends Component {
+  state: StateBankMap = {
+    view: {
+      longitude: 0,
+      latitude: 0,
+      zoom: 10
+    },
+    bankID: null,
+    data: [],
+    filter: ""
+  };
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(async (coords) => {
@@ -33,7 +36,7 @@ class BankMap extends Component<{}, PropsBankMap> {
         }
       });
 
-      const data = await serviceMapbox.getBanks("en", 25, [
+      const data = await serviceMapbox.getBanks([
         coords.coords.longitude,
         coords.coords.latitude
       ]);
@@ -49,32 +52,40 @@ class BankMap extends Component<{}, PropsBankMap> {
     this.setState({ bankID: null });
   };
 
+  handleChangeFilter = (value: string) => {
+    this.setState({ filter: value });
+  };
+
   render() {
-    const { data, bankID } = this.state;
+    const { data, bankID, filter } = this.state;
 
     return (
-      <div>
+      <div className={styles.map}>
+        <BankSearch
+          value={this.state.filter}
+          handleChangeFilter={this.handleChangeFilter}
+        />
         <Map
           mapboxAccessToken={process.env.APIKEY_MAP}
           {...this.state.view}
           onMove={(evt) => {
             this.setState({ view: evt.viewState });
           }}
-          style={{ width: "100vw", height: 600 }}
+          style={{ width: "100vw", height: 500 }}
           mapStyle="mapbox://styles/mapbox/streets-v9">
-          {data?.map((item, index) => {
-            return (
-              <BankMarker
-                key={index}
-                bankID={bankID}
-                handleClickOpen={this.handleClickOpen}
-                handleClickClose={this.handleClickClose}
-                item={item}
-              />
-            );
-          })}
+          {data &&
+            filterUpdateDataBanks(data, filter).map((item, index) => {
+              return (
+                <BankMarker
+                  key={index}
+                  bankID={bankID}
+                  handleClickOpen={this.handleClickOpen}
+                  handleClickClose={this.handleClickClose}
+                  item={item}
+                />
+              );
+            })}
         </Map>
-        <p>{this.state.view.latitude}</p>
       </div>
     );
   }
