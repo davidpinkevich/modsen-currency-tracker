@@ -69,7 +69,7 @@ const createGraphConfig = (
         ctx,
         tooltip,
         chartArea: { left, right },
-        scales: { x, y }
+        scales: { y }
       } = chart;
       if (tooltip._active && tooltip._active.length) {
         ctx.beginPath();
