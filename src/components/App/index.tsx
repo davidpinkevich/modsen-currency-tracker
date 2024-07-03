@@ -4,6 +4,7 @@ import { useTheme } from "@hooks/useTheme";
 
 import { BankCard } from "@pages/BankCard";
 import { Home } from "@pages/Home";
+import { Contacts } from "@pages/Contacts";
 import { MainLayout } from "@pages/MainLayout";
 import Timeline from "@pages/Timeline";
 
@@ -17,7 +18,7 @@ const routes = [
       { index: true, element: <Home /> },
       { path: "timeline", element: <Timeline /> },
       { path: "card", element: <BankCard /> },
-      { path: "contacts", element: <div>contacts</div> },
+      { path: "contacts", element: <Contacts /> },
       { path: "*", element: <div>Note found</div> }
     ]
   }
