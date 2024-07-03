@@ -23,12 +23,13 @@ export interface TypeDataMapbox {
   };
 }
 
-export interface PropsBankMap {
+export interface StateBankMap {
   view: {
     longitude: number;
     latitude: number;
     zoom: number;
   };
+  filter: string;
   bankID: number | null;
   data: UpdateMapboxItem[] | undefined;
 }
@@ -38,4 +39,10 @@ export interface PropsMarker {
   bankID: number | null;
   handleClickOpen: (id: number) => void;
   handleClickClose: () => void;
+}
+
+export interface PropsBankSearch {
+  value: string;
+  theme: string;
+  handleChangeFilter: (value: string) => void;
 }

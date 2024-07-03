@@ -3,7 +3,8 @@ import { type TypeCurrencyItems } from "./CurrencyItems.types";
 import { type TypeDataCurrency } from "./DataCurrency.types";
 import {
   type MapboxItem,
-  type PropsBankMap,
+  type StateBankMap,
+  type PropsBankSearch,
   type PropsMarker,
   type TypeDataMapbox,
   type UpdateMapboxItem
@@ -29,7 +30,8 @@ import {
 export type {
   CurrencyItem,
   MapboxItem,
-  PropsBankMap,
+  StateBankMap,
+  PropsBankSearch,
   PropsInputDate,
   PropsMarker,
   PropsSelectCurrency,
