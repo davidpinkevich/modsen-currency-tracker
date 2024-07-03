@@ -6,6 +6,7 @@ import { BankCard } from "@pages/BankCard";
 import { Contacts } from "@pages/Contacts";
 import { Home } from "@pages/Home";
 import { MainLayout } from "@pages/MainLayout";
+import { NotFound } from "@pages/NotFound";
 import Timeline from "@pages/Timeline";
 
 import styles from "./styles.module.scss";
@@ -19,7 +20,7 @@ const routes = [
       { path: "timeline", element: <Timeline /> },
       { path: "card", element: <BankCard /> },
       { path: "contacts", element: <Contacts /> },
-      { path: "*", element: <div>Note found</div> }
+      { path: "*", element: <NotFound /> }
     ]
   }
 ];
