@@ -1,0 +1,110 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.bank {
+  font-family: $FontPoppins;
+  color: $ColorWhite;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  gap: 20px;
+
+  & h2 {
+    font-size: $FontSizeMapSearchTitle;
+    line-height: 120%;
+    margin-bottom: 50px;
+
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(margin-bottom, 50, 0);
+      @include adaptiv-360(font-size, 38, 24);
+    }
+  }
+
+  &_search {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    transition: all 0.2s;
+
+    & input {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: $FontSizeMapSearchInput;
+      background-color: rgb(37, 44, 55);
+      color: $ColorWhite;
+      width: 100%;
+      transition: all 0.2s;
+
+      &:focus {
+        background-color: rgb(28, 33, 41);
+      }
+    }
+    & img {
+      position: absolute;
+      top: 12px;
+      right: 10px;
+    }
+
+    &_white {
+      & input {
+        background-color: rgb(234, 254, 228);
+        color: $ColorBlack;
+        &:focus {
+          background-color: rgb(219, 248, 204);
+        }
+      }
+    }
+  }
+
+  &_white {
+    color: $ColorBlack;
+  }
+}
+
+.popup {
+  width: 100%;
+
+  transition: all 0.2s;
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  top: 130px;
+  left: 0;
+  font-size: 18px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+
+  & p:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  & p:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  & p {
+    background-color: rgb(37, 44, 55);
+    transition: all 0.2s;
+    padding: 14px 20px;
+    width: 100%;
+    &:hover {
+      background-color: rgb(56, 65, 80);
+    }
+  }
+
+  &_white {
+    & p {
+      background-color: rgb(234, 254, 228);
+      color: $ColorBlack;
+      &:hover {
+        background-color: rgb(219, 248, 204);
+      }
+    }
+  }
+}
