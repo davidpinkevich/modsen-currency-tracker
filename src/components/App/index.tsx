@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import { useTheme } from "@hooks/useTheme";
 
 import { BankCard } from "@pages/BankCard";
-import { Home } from "@pages/Home";
 import { Contacts } from "@pages/Contacts";
+import { Home } from "@pages/Home";
 import { MainLayout } from "@pages/MainLayout";
 import Timeline from "@pages/Timeline";
 
