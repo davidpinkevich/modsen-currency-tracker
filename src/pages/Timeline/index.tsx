@@ -41,10 +41,10 @@ class Timeline extends Component<PropsTimeline> {
   }
 }
 
-const mapStateToProps = (state: RootState) => ({
-  dataTimeseries: state.sliceTracker.dataTimeseries,
-  paramsTimeseries: state.sliceTracker.paramsTimeseries,
-  loading: state.sliceTracker.loading
+const mapStateToProps = ({ sliceTracker }: RootState) => ({
+  dataTimeseries: sliceTracker.dataTimeseries,
+  paramsTimeseries: sliceTracker.paramsTimeseries,
+  loading: sliceTracker.loading
 });
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
