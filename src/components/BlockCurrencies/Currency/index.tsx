@@ -1,5 +1,3 @@
-import classNames from "classnames";
-
 import { createRealRate } from "@utils/helpers/createRealRate";
 import { useAppDispatch } from "@hooks/useRedux";
 import { useTheme } from "@hooks/useTheme";
@@ -20,7 +18,7 @@ const Currency: React.FC<CurrencyItem> = ({
   iso,
   img
 }) => {
-  const darkTheme = useTheme();
+  const createClass = useTheme();
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
@@ -30,13 +28,12 @@ const Currency: React.FC<CurrencyItem> = ({
     }
   };
 
-  const classCurrency = darkTheme
-    ? styles.currency
-    : classNames(styles.currency, styles.currency_white);
+  const classCurrency = createClass(styles.currency, styles.currency_white);
 
-  const classCurrencyInfo = darkTheme
-    ? styles.currency_info
-    : classNames(styles.currency_info, styles.currency_info_white);
+  const classCurrencyInfo = createClass(
+    styles.currency_info,
+    styles.currency_info_white
+  );
 
   return (
     <div onClick={handleClick} className={classCurrency}>

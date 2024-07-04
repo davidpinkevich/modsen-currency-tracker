@@ -1,5 +1,6 @@
+import { ThemeMode } from "@constants/themeMode";
 import { useAppDispatch, useAppSelector } from "@hooks/useRedux";
-import { useTheme } from "@hooks/useTheme";
+import { getTheme } from "@redux/slices/sliceMemory";
 import { changeMenu, getOpenMenu } from "@redux/slices/sliceTracker";
 
 import { createClassBurger } from "./createClassBurger";
@@ -7,7 +8,7 @@ import { createClassBurger } from "./createClassBurger";
 import styles from "./styles.module.scss";
 
 const Burger: React.FC = () => {
-  const themeDark = useTheme();
+  const darkTheme = useAppSelector(getTheme);
   const open = useAppSelector(getOpenMenu);
   const dispatch = useAppDispatch();
 
@@ -15,11 +16,13 @@ const Burger: React.FC = () => {
     dispatch(changeMenu(!open));
   };
 
+  const currentTheme = darkTheme === ThemeMode.DARK;
+
   return (
     <button
       className={createClassBurger(
         open,
-        themeDark,
+        currentTheme,
         styles.burger,
         styles.burger_open,
         styles.burger_white
@@ -28,7 +31,7 @@ const Burger: React.FC = () => {
       <span
         className={createClassBurger(
           open,
-          themeDark,
+          currentTheme,
           styles.burger_span,
           styles.burger_span_open,
           styles.burger_span_white

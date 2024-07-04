@@ -1,6 +1,7 @@
 const getCurrentDate = () => {
   return new Date().toISOString().split("T")[0];
 };
+
 const getThirtyDaysAgoDate = () => {
   const currentDate = new Date();
   currentDate.setDate(currentDate.getDate() - 30);

@@ -1,5 +1,3 @@
-import classNames from "classnames";
-
 import { CURRENCY_ITEMS } from "@constants/currencyItems";
 import { useAppSelector } from "@hooks/useRedux";
 import { useTheme } from "@hooks/useTheme";
@@ -13,13 +11,11 @@ import { Currency } from "./Currency";
 import styles from "./styles.module.scss";
 
 const BlockCurrencies: React.FC = () => {
-  const darkTheme = useTheme();
+  const createClass = useTheme();
   const data = useAppSelector(getDataCurrencies);
   const loading = useAppSelector(getLoadCurrencies);
 
-  const classBlock = darkTheme
-    ? styles.currencies
-    : classNames(styles.currencies, styles.currencies_white);
+  const classBlock = createClass(styles.currencies, styles.currencies_white);
 
   return (
     <div className={styles.currencies_container}>

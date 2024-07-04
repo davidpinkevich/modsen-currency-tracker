@@ -23,9 +23,9 @@ const routes = [
 ];
 
 const App: React.FC = () => {
-  const darkTheme = useTheme();
+  const createClass = useTheme();
 
-  const classApp = darkTheme ? styles.app : styles.app_white;
+  const classApp = createClass(styles.app, styles.app_white);
 
   return (
     <div className={classApp}>

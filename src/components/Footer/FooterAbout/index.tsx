@@ -1,17 +1,15 @@
-import classNames from "classnames";
-
+import { useTheme } from "@hooks/useTheme";
 import graph from "@assets/icons/graph.svg";
 
 import styles from "./styles.module.scss";
 
-import { useTheme } from "@src/hooks/useTheme";
-
 const FooterAbout: React.FC = () => {
-  const darkTheme = useTheme();
+  const createClass = useTheme();
 
-  const classFooterAbout = darkTheme
-    ? styles.footer_about
-    : classNames(styles.footer_about, styles.footer_about_white);
+  const classFooterAbout = createClass(
+    styles.footer_about,
+    styles.footer_about_white
+  );
 
   return (
     <div className={classFooterAbout}>

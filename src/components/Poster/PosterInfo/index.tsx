@@ -1,18 +1,14 @@
-import classNames from "classnames";
-
 import { useTheme } from "@hooks/useTheme";
 
 import styles from "./styles.module.scss";
 
 const PosterInfo: React.FC = () => {
-  const darkTheme = useTheme();
+  const createClass = useTheme();
 
-  const classPosterInfo = darkTheme
-    ? styles.poster_info_describe
-    : classNames(
-        styles.poster_info_describe,
-        styles.poster_info_describe_white
-      );
+  const classPosterInfo = createClass(
+    styles.poster_info_describe,
+    styles.poster_info_describe_white
+  );
 
   return (
     <div className={styles.poster_info}>
