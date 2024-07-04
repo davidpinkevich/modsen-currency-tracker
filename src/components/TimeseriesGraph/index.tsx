@@ -45,11 +45,11 @@ class TimeseriesGraph extends Component<PropsTimeseriesGraph> {
         : classNames(styles.graph, styles.graph_white);
 
     if (dataTimeseries?.length) {
-      const { data, options, plugins } = createGraphConfig(dataTimeseries);
+      const config = createGraphConfig(dataTimeseries);
       return (
         <div className={classTimeseriesGraph}>
           {dataTimeseries.length >= 30 ? (
-            <Bar options={options} data={data} plugins={plugins} />
+            <Bar {...config} />
           ) : (
             <p>Please indicate a period of 30 days</p>
           )}
