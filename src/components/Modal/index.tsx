@@ -28,7 +28,10 @@ const Modal: React.FC = () => {
   return (
     <>
       {openModal && (
-        <div onClick={handleModalShadow} className={styles.modal}>
+        <div
+          data-testcy="modal"
+          onClick={handleModalShadow}
+          className={styles.modal}>
           <div className={classModal}>
             <button onClick={handleButton}>
               <img src={cross} alt="close" />

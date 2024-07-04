@@ -23,7 +23,7 @@ const Swiper: React.FC = () => {
     : classNames(styles.swiper_button, styles.swiper_button_white);
 
   return (
-    <button onClick={handleButton} className={classSwiper}>
+    <button data-testcy="swiper" onClick={handleButton} className={classSwiper}>
       <div className={classSwiperBtn} />
     </button>
   );
