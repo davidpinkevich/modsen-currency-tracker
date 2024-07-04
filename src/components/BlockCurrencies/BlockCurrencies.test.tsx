@@ -1,10 +1,12 @@
-import { render, RenderResult } from "@testing-library/react";
 import { Provider } from "react-redux";
-import configureStore, { type MockStoreEnhanced } from "redux-mock-store";
-import { BlockCurrencies } from ".";
-import { RootState, AppDispatch } from "@redux/store";
+import { render, type RenderResult } from "@testing-library/react";
 
+import { type AppDispatch, type RootState } from "@redux/store";
 import { mockDataStore } from "@mocks/mockStore";
+
+import { BlockCurrencies } from ".";
+
+import configureStore, { type MockStoreEnhanced } from "redux-mock-store";
 
 const mockStore = configureStore<RootState, AppDispatch>();
 
