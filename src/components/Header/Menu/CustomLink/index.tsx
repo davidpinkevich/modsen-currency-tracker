@@ -2,13 +2,12 @@ import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
 
 import { getLocation } from "@utils/helpers/getLocation";
+import { useAppDispatch } from "@hooks/useRedux";
 import { useTheme } from "@hooks/useTheme";
 import { changeMenu } from "@redux/slices/sliceTracker";
 import { type TypeLinkHeader } from "@src/types";
 
 import styles from "./styles.module.scss";
-
-import { useAppDispatch } from "@hooks/useRedux";
 
 const CustomLink: React.FC<TypeLinkHeader> = ({ name, path }) => {
   const darkTheme = useTheme();

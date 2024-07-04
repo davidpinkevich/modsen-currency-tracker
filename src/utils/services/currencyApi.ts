@@ -1,7 +1,7 @@
+import { NAMES_CURRENCY } from "@constants/index";
 import { createQueryCurrencies } from "@utils/helpers/createQueryCurrencies";
 import { type TypeDataCurrency } from "@src/types";
 
-import { NAMES_CURRENCY } from "@constants/index";
 import axios from "axios";
 
 class CurrencyService {
