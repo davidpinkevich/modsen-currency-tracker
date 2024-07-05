@@ -1,6 +1,5 @@
-import classNames from "classnames";
-
 import { useModal } from "@hooks/useModal";
+import { useTheme } from "@hooks/useTheme";
 import cross from "@assets/icons/cross.svg";
 import { changeModal } from "@redux/slices/sliceTracker";
 
@@ -9,7 +8,8 @@ import { Conversion } from "./Conversion";
 import styles from "./styles.module.scss";
 
 const Modal: React.FC = () => {
-  const { darkTheme, openModal, dispatch } = useModal(styles);
+  const createClass = useTheme();
+  const { openModal, dispatch } = useModal(styles);
 
   const handleModalShadow = (event: React.MouseEvent<HTMLDivElement>) => {
     if ((event.target as HTMLElement).classList.contains(styles.modal)) {
@@ -21,9 +21,7 @@ const Modal: React.FC = () => {
     dispatch(changeModal());
   };
 
-  const classModal = darkTheme
-    ? styles.modal_block
-    : classNames(styles.modal_block, styles.modal_block_white);
+  const classModal = createClass(styles.modal_block, styles.modal_block_white);
 
   return (
     <>

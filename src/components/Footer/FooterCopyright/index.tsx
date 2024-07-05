@@ -1,15 +1,11 @@
-import classNames from "classnames";
-
 import styles from "./styles.module.scss";
 
 import { useTheme } from "@src/hooks/useTheme";
 
 const FooterCopyright: React.FC = () => {
-  const darkTheme = useTheme();
+  const createClass = useTheme();
 
-  const classFooterCopyright = darkTheme
-    ? styles.copy
-    : classNames(styles.copy, styles.copy_white);
+  const classFooterCopyright = createClass(styles.copy, styles.copy_white);
 
   return (
     <p className={classFooterCopyright}>

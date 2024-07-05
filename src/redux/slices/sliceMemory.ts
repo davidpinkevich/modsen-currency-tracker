@@ -22,7 +22,11 @@ const initialState: TypeInitialState = {
 export const fetchCurrencies = createAsyncThunk(
   "sliceMemory/fetchCurrencies",
   async () => {
-    return await serviceCurrencies.getCurrencies();
+    const response = await serviceCurrencies.getCurrencies();
+    if (response) {
+      return response.data.data;
+    }
+    return undefined;
   }
 );
 
@@ -45,7 +49,7 @@ const sliceMemory = createSlice({
       })
       .addCase(fetchCurrencies.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload?.data.data;
+        state.data = action.payload;
       });
   },
   selectors: {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { type ChangeEvent, Component } from "react";
 import { connect } from "react-redux";
 import classNames from "classnames";
 
@@ -18,19 +18,35 @@ class DateInput extends Component<PropsInputDate> {
   min = DATE_INFO.MIN;
   max = getCurrentDate();
 
-  handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  handleDateChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { type, changeParamsTimeseriesEnd, changeParamsTimeseriesStart } =
       this.props;
 
+    const newDate = event.target.value;
+
     if (type === DirectionOptions.START) {
-      changeParamsTimeseriesStart(event.target.value);
+      if (
+        newDate <= getCurrentDate() &&
+        newDate <= this.props.paramsTimeseries.end
+      ) {
+        changeParamsTimeseriesStart(newDate);
+      } else {
+        changeParamsTimeseriesStart(this.props.paramsTimeseries.start);
+      }
     } else {
-      changeParamsTimeseriesEnd(event.target.value);
+      if (
+        newDate <= getCurrentDate() &&
+        newDate >= this.props.paramsTimeseries.start
+      ) {
+        changeParamsTimeseriesEnd(newDate);
+      } else {
+        changeParamsTimeseriesEnd(this.props.paramsTimeseries.end);
+      }
     }
   };
 
   render() {
-    const { paramsTimeseries, type, theme } = this.props;
+    const { paramsTimeseries, type, theme, loading } = this.props;
 
     const classDateInput =
       theme === ThemeMode.DARK
@@ -41,6 +57,7 @@ class DateInput extends Component<PropsInputDate> {
       <div className={classDateInput}>
         <h2>{type === DirectionOptions.START ? "Start" : "End"} period:</h2>
         <input
+          disabled={loading}
           type="date"
           value={paramsTimeseries[type]}
           onChange={this.handleDateChange}
@@ -52,10 +69,10 @@ class DateInput extends Component<PropsInputDate> {
   }
 }
 
-const mapStateToProps = (state: RootState) => ({
-  paramsTimeseries: state.sliceTracker.paramsTimeseries,
-  loading: state.sliceTracker.loading,
-  theme: state.sliceMemory.theme
+const mapStateToProps = ({ sliceTracker, sliceMemory }: RootState) => ({
+  paramsTimeseries: sliceTracker.paramsTimeseries,
+  loading: sliceTracker.loading,
+  theme: sliceMemory.theme
 });
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({
