@@ -1,0 +1,45 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.fallback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $FontPoppins;
+  color: $ColorErrorBoudnary;
+
+  gap: 20px;
+  padding: 40px 20px;
+
+  & img {
+    width: 70px;
+    height: 70px;
+
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(width, 70, 55);
+      @include adaptiv-360(height, 70, 55);
+    }
+  }
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  & h2 {
+    font-weight: 600;
+    font-size: $FontSizeErrorTitle;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(font-size, 32, 20);
+    }
+  }
+
+  & p {
+    font-weight: 400;
+    font-size: $FontSizeErrorInfo;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(font-size, 28, 16);
+    }
+  }
+}

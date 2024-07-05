@@ -1,0 +1,21 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.graph {
+  & p {
+    font-family: $FontPoppins;
+    color: $ColorWhite;
+    text-align: center;
+    font-size: 54px;
+    transition: all 0.2s;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(font-size, 54, 22);
+    }
+  }
+
+  &_white {
+    & p {
+      color: $DarkGray;
+    }
+  }
+}

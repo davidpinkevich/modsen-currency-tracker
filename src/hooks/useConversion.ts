@@ -2,12 +2,10 @@ import { useEffect, useState } from "react";
 
 import { sliceConversion } from "@utils/helpers/getConversion";
 import { useAppDispatch, useAppSelector } from "@hooks/useRedux";
-import { useTheme } from "@hooks/useTheme";
 import { getDataCurrencies } from "@redux/slices/sliceMemory";
 import { getConversionISO } from "@redux/slices/sliceTracker";
 
 const useConversion = () => {
-  const theme = useTheme();
   const data = useAppSelector(getDataCurrencies);
   const conversionISO = useAppSelector(getConversionISO);
   const dispatch = useAppDispatch();
@@ -30,7 +28,7 @@ const useConversion = () => {
     setResult(convertCurrency(conversionISO.from, conversionISO.to, input));
   }, [input, conversionISO.to]);
 
-  return { input, setInput, result, dispatch, conversionISO, theme };
+  return { input, setInput, result, dispatch, conversionISO };
 };
 
 export { useConversion };

@@ -1,10 +1,17 @@
+import classNames from "classnames";
+
+import { ThemeMode } from "@constants/themeMode";
 import { useAppSelector } from "@hooks/useRedux";
 import { getTheme } from "@redux/slices/sliceMemory";
 
 const useTheme = () => {
-  const theme = useAppSelector(getTheme);
+  const dark = useAppSelector(getTheme);
 
-  return theme;
+  return (baseClass: string, ...white: string[]) => {
+    return dark === ThemeMode.DARK
+      ? baseClass
+      : classNames(baseClass, ...white);
+  };
 };
 
 export { useTheme };

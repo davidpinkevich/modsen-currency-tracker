@@ -1,0 +1,44 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.date {
+  font-family: $FontPoppins;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(gap, 20, 10);
+  }
+  @media (max-width: $breakPointMD) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  & input {
+    appearance: none;
+    cursor: pointer;
+    border: 1px solid $DarkGray;
+    font-size: $FonstSizeTimeseriesDateInput;
+    transition: all 0.2s;
+    background-color: rgb(238, 227, 227);
+    padding: 10px 20px;
+    border-radius: 8px;
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(font-size, 24, 16);
+      @include adaptiv-360(padding-top, 10, 8);
+      @include adaptiv-360(padding-bottom, 10, 8);
+      @include adaptiv-360(padding-left, 20, 10);
+      @include adaptiv-360(padding-right, 20, 10);
+    }
+    @media (max-width: $breakPointMD) {
+      width: 100%;
+    }
+  }
+
+  &_white {
+    & input {
+      background-color: $ColorWhite;
+    }
+  }
+}

@@ -1,23 +1,21 @@
 import classNames from "classnames";
 
-import { ThemeMode } from "@src/constants/themeMode";
-
-function createClassForHeader(
+function createClassBurger(
   open: boolean,
-  theme: string,
+  themeDark: boolean,
   mainStyle: string,
   mainStyleOpen: string,
   mainStyleWhite: string
 ) {
-  if (open && theme === ThemeMode.DARK) {
+  if (open && themeDark) {
     return classNames(mainStyle, mainStyleOpen);
-  } else if (open && theme === ThemeMode.WHITE) {
+  } else if (open && !themeDark) {
     return classNames(mainStyle, mainStyleWhite, mainStyleOpen);
-  } else if (!open && theme === ThemeMode.DARK) {
+  } else if (!open && themeDark) {
     return classNames(mainStyle);
-  } else if (!open && theme === ThemeMode.WHITE) {
+  } else if (!open && !themeDark) {
     return classNames(mainStyle, mainStyleWhite);
   }
 }
 
-export { createClassForHeader };
+export { createClassBurger };

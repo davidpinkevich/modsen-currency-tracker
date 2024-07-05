@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 
-import { ThemeMode } from "@constants/themeMode";
 import { useTheme } from "@hooks/useTheme";
 
 import { Home } from "@pages/Home";
 import { MainLayout } from "@pages/MainLayout";
+import Timeline from "@pages/Timeline";
 
 import styles from "./styles.module.scss";
 
@@ -14,7 +14,7 @@ const routes = [
     element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "timeline", element: <div>timeline</div> },
+      { path: "timeline", element: <Timeline /> },
       { path: "card", element: <div>card</div> },
       { path: "contacts", element: <div>contacts</div> },
       { path: "*", element: <div>Note found</div> }
@@ -23,10 +23,12 @@ const routes = [
 ];
 
 const App: React.FC = () => {
-  const theme = useTheme();
+  const createClass = useTheme();
+
+  const classApp = createClass(styles.app, styles.app_white);
 
   return (
-    <div className={theme === ThemeMode.DARK ? styles.app : styles.app_white}>
+    <div className={classApp}>
       <Routes>
         {routes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element}>

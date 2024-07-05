@@ -1,21 +1,17 @@
-import classNames from "classnames";
-
-import { ThemeMode } from "@constants/themeMode";
+import { useTheme } from "@hooks/useTheme";
 
 import styles from "./styles.module.scss";
 
-import { useTheme } from "@src/hooks/useTheme";
-
 const FooterNav: React.FC = () => {
-  const theme = useTheme();
+  const createClass = useTheme();
+
+  const classFooterNav = createClass(
+    styles.footer_nav,
+    styles.footer_nav_white
+  );
 
   return (
-    <ul
-      className={
-        theme === ThemeMode.DARK
-          ? styles.footer_nav
-          : classNames(styles.footer_nav, styles.footer_nav_white)
-      }>
+    <ul className={classFooterNav}>
       <li>
         <h2>General</h2>
         <p>Market</p>

@@ -1,16 +1,17 @@
 import classNames from "classnames";
 
 import { CURRENCY_ITEMS } from "@constants/currencyItems";
-import { ThemeMode } from "@constants/themeMode";
 import { getConversion } from "@utils/helpers/getConversion";
 import { useConversion } from "@hooks/useConversion";
+import { useTheme } from "@hooks/useTheme";
 import { changeConversionISOTo } from "@redux/slices/sliceTracker";
 
 import styles from "./styles.module.scss";
 
 const Conversion = () => {
-  const { input, setInput, result, theme, conversionISO, dispatch } =
-    useConversion();
+  const createClass = useTheme();
+
+  const { input, setInput, result, conversionISO, dispatch } = useConversion();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInput(getConversion(event.target.value));
@@ -20,13 +21,13 @@ const Conversion = () => {
     dispatch(changeConversionISOTo(value));
   };
 
+  const classConversion = createClass(
+    styles.conversion,
+    styles.conversion_white
+  );
+
   return (
-    <div
-      className={
-        theme === ThemeMode.DARK
-          ? styles.conversion
-          : classNames(styles.conversion, styles.conversion_white)
-      }>
+    <div className={classConversion}>
       <div className={styles.conversion_info}>
         From: <span>{conversionISO.from}</span>
       </div>

@@ -3,10 +3,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@hooks/useRedux";
 import { getOpenModal } from "@redux/slices/sliceTracker";
 
-import { useTheme } from "./useTheme";
-
 const useModal = (styles: Record<string, string>) => {
-  const theme = useTheme();
   const openModal = useAppSelector(getOpenModal);
   const dispatch = useAppDispatch();
 
@@ -18,7 +15,7 @@ const useModal = (styles: Record<string, string>) => {
     }
   }, [openModal]);
 
-  return { theme, openModal, dispatch };
+  return { openModal, dispatch };
 };
 
 export { useModal };

@@ -8,4 +8,6 @@ const ROUNDING_CONVERSION: TypeRoundingConversion = {
   VIEW_RESULT: 9
 };
 
-export { ROUNDING_CONVERSION };
+const ROUNDING_GRAPH = 4;
+
+export { ROUNDING_CONVERSION, ROUNDING_GRAPH };

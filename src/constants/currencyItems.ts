@@ -71,4 +71,35 @@ const CURRENCY_ITEMS: TypeCurrencyItems = {
   ]
 };
 
-export { CURRENCY_ITEMS };
+const SELECT_QUOTES = [
+  {
+    title: "Commercial Dollar",
+    iso: "USD"
+  },
+  {
+    title: "Canadian Dollar",
+    iso: "CAD"
+  },
+  {
+    title: "Yen",
+    iso: "JPY"
+  },
+  {
+    title: "Australian Dollar",
+    iso: "AUD"
+  },
+  {
+    title: "Euro",
+    iso: "EUR"
+  },
+  {
+    title: "Bitcoin",
+    iso: "BTC"
+  },
+  {
+    title: "Libra",
+    iso: "GBP"
+  }
+];
+
+export { CURRENCY_ITEMS, SELECT_QUOTES };
