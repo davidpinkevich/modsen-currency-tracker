@@ -5,11 +5,12 @@ import { useTheme } from "@hooks/useTheme";
 import styles from "./styles.module.scss";
 
 const BlockContacts: React.FC = () => {
-  const darkTheme = useTheme();
+  const createClass = useTheme();
 
-  const classBlockContacts = darkTheme
-    ? styles.contacts
-    : classNames(styles.contacts, styles.contacts_white);
+  const classBlockContacts = createClass(
+    styles.contacts,
+    styles.contacts_white
+  );
 
   return (
     <ul className={classBlockContacts}>
