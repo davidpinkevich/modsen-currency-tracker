@@ -44,7 +44,7 @@ class TimeseriesGraph extends Component<PropsTimeseriesGraph> {
         ? styles.graph
         : classNames(styles.graph, styles.graph_white);
 
-    if (dataTimeseries?.length) {
+    if (dataTimeseries) {
       const config = createGraphConfig(dataTimeseries);
       return (
         <div className={classTimeseriesGraph}>
