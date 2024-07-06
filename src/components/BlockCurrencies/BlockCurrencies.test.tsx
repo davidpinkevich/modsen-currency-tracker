@@ -1,4 +1,5 @@
 import { Provider } from "react-redux";
+import { expect } from "@jest/globals";
 import { render, type RenderResult } from "@testing-library/react";
 
 import { type AppDispatch, type RootState } from "@redux/store";

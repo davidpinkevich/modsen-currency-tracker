@@ -4,7 +4,9 @@ import {
   filterUpdateDataBanks,
   updateDataBanks
 } from "@utils/helpers/updateDataBanks"; // Замените 'your-module' на имя вашего модуля
-import { type MapboxItem, type UpdateMapboxItem } from "@src/types";
+import { type UpdateMapboxItem } from "@src/types";
+
+import { expect } from "@jest/globals";
 
 const data = [
   {

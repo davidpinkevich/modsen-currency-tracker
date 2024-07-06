@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { getCurrentDate, getThirtyDaysAgoDate } from "@utils/helpers/getDate";
 
 describe("get date", () => {

@@ -1,4 +1,6 @@
-import { getLocation } from "@utils/helpers/getLocation"; // Замените 'your-module' на имя вашего модуля
+import { expect } from "@jest/globals";
+
+import { getLocation } from "@utils/helpers/getLocation";
 
 describe("get location", () => {
   test('should return "/"', () => {

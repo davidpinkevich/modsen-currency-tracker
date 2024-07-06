@@ -1,5 +1,7 @@
 import { findCurrentSelect } from "@utils/helpers/findCurrentSelect";
 
+import { expect } from "@jest/globals";
+
 describe("find current select", () => {
   const data = [
     {

@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { createRealRate } from "@utils/helpers/createRealRate";
 
 describe("create real rate", () => {

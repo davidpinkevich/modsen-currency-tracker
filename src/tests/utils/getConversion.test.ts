@@ -1,3 +1,5 @@
+import { expect } from "@jest/globals";
+
 import { getConversion, sliceConversion } from "@utils/helpers/getConversion";
 
 describe("conversion", () => {
