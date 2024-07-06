@@ -1,5 +1,3 @@
-import classNames from "classnames";
-
 import { useTheme } from "@hooks/useTheme";
 
 import styles from "./styles.module.scss";

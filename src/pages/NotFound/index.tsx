@@ -1,5 +1,3 @@
-import classNames from "classnames";
-
 import img from "@assets/icons/not-found.svg";
 
 import styles from "./styles.module.scss";
