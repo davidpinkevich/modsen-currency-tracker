@@ -1,0 +1,45 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.not_found {
+  font-family: $FontPoppins;
+  color: $ColorWhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  font-size: 44px;
+  padding: 0 15px;
+
+  margin-bottom: 100px;
+
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(margin-top, 50, 20);
+    @include adaptiv-360(margin-bottom, 100, 30);
+    @include adaptiv-360(font-size, 44, 30);
+  }
+
+  &_white {
+    color: $DarkGray;
+  }
+
+  &_img {
+    position: relative;
+    width: 400px;
+    height: 400px;
+
+    @media (max-width: $breakPointXL) {
+      @include adaptiv-360(width, 400, 280);
+      @include adaptiv-360(height, 400, 280);
+    }
+
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

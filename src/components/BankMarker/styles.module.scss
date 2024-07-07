@@ -1,0 +1,25 @@
+@import "@styles/variables.scss";
+
+.popup {
+  color: $ColorBlack;
+  font-family: $FontPoppins;
+  font-size: 16px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  & h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 130%;
+  }
+
+  & p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    line-height: 130%;
+  }
+}

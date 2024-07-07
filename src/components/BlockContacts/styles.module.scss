@@ -1,0 +1,74 @@
+@import "@styles/variables.scss";
+@import "@styles/mixins.scss";
+
+.contacts {
+  font-family: $FontPoppins;
+  color: $ColorWhite;
+  justify-content: center;
+  align-items: center;
+  max-width: $widthContainer;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 0px 15px;
+  transition: all 0.2s;
+
+  @media (max-width: $breakPointXL) {
+    @include adaptiv-360(margin-top, 100, 30);
+    @include adaptiv-360(margin-bottom, 100, 30);
+    @include adaptiv-360(gap, 50, 30);
+  }
+
+  @media (max-width: $breakPointSM) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  & li {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    & h2 {
+      font-size: 34px;
+      font-weight: 500;
+
+      @media (max-width: $breakPointXL) {
+        @include adaptiv-360(font-size, 34, 24);
+      }
+    }
+    & p {
+      font-size: 24px;
+      font-weight: 500;
+
+      @media (max-width: $breakPointXL) {
+        @include adaptiv-360(font-size, 24, 16);
+      }
+
+      & span {
+        font-weight: 300;
+        transition: all 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          color: $MainGray;
+        }
+      }
+    }
+  }
+
+  &_white {
+    color: $DarkGray;
+    & li {
+      & p {
+        & span {
+          &:hover {
+            cursor: pointer;
+            color: $ColorBlack;
+          }
+        }
+      }
+    }
+  }
+}

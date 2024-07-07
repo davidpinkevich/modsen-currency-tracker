@@ -2,6 +2,14 @@ import { type CurrencyItem } from "./CurrencyItem.types";
 import { type TypeCurrencyItems } from "./CurrencyItems.types";
 import { type TypeDataCurrency } from "./DataCurrency.types";
 import {
+  type MapboxItem,
+  type PropsBankSearch,
+  type PropsMarker,
+  type StateBankMap,
+  type TypeDataMapbox,
+  type UpdateMapboxItem
+} from "./DataMapbox.types";
+import {
   type TypeDataTimeseries,
   type TypeItemTimeseries
 } from "./DataTimeseries.types";
@@ -21,17 +29,23 @@ import {
 
 export type {
   CurrencyItem,
+  MapboxItem,
+  PropsBankSearch,
   PropsInputDate,
+  PropsMarker,
   PropsSelectCurrency,
   PropsTimeline,
   PropsTimeseriesFilters,
   PropsTimeseriesGraph,
+  StateBankMap,
   TypeCurrencyItems,
   TypeDataCurrency,
+  TypeDataMapbox,
   TypeDataTimeseries,
   TypeErrorBoundaryProps,
   TypeErrorBoundaryState,
   TypeItemTimeseries,
   TypeLinkHeader,
-  TypeRoundingConversion
+  TypeRoundingConversion,
+  UpdateMapboxItem
 };

@@ -85,10 +85,6 @@ const SELECT_QUOTES = [
     iso: "JPY"
   },
   {
-    title: "Australian Dollar",
-    iso: "AUD"
-  },
-  {
     title: "Euro",
     iso: "EUR"
   },
