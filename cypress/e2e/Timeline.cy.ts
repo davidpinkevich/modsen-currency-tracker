@@ -14,15 +14,12 @@ describe("Open page with timeline", () => {
     cy.get('input[type="date"]').eq(1).type("2024-04-25", { force: true });
     cy.get('input[type="date"]').eq(1).should("have.value", "2024-04-25");
 
-    cy.get("*").contains("Loading").should("be.visible");
-    cy.get("*")
-      .contains("The graph was built successfully")
-      .should("be.visible");
-
     cy.get('[data-testcy="select"]').eq(0).click();
 
     cy.get("li").eq(1).click();
     cy.get("*").contains("Canadian Dollar").should("be.visible");
+
+    cy.get('[data-testcy="create"]').click();
     cy.get("*").contains("Loading").should("be.visible");
 
     cy.get("canvas").should("be.visible");

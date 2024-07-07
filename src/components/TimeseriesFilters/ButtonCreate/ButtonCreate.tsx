@@ -37,7 +37,10 @@ class ButtonCreate extends Component<PropsTimelineBtnCreate> {
         ? styles.date
         : classNames(styles.button, styles.button_white);
     return (
-      <button className={classButtonCreate} onClick={this.handleClick}>
+      <button
+        data-testcy="create"
+        className={classButtonCreate}
+        onClick={this.handleClick}>
         Create Graph
       </button>
     );
