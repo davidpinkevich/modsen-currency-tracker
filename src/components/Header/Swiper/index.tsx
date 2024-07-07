@@ -20,7 +20,7 @@ const Swiper: React.FC = () => {
   );
 
   return (
-    <button onClick={handleButton} className={classSwiper}>
+    <button data-testcy="swiper" onClick={handleButton} className={classSwiper}>
       <div className={classSwiperBtn} />
     </button>
   );

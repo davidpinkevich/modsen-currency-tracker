@@ -2,8 +2,11 @@ import { Route, Routes } from "react-router-dom";
 
 import { useTheme } from "@hooks/useTheme";
 
+import { BankCard } from "@pages/BankCard";
+import { Contacts } from "@pages/Contacts";
 import { Home } from "@pages/Home";
 import { MainLayout } from "@pages/MainLayout";
+import { NotFound } from "@pages/NotFound";
 import Timeline from "@pages/Timeline";
 
 import styles from "./styles.module.scss";
@@ -15,9 +18,9 @@ const routes = [
     children: [
       { index: true, element: <Home /> },
       { path: "timeline", element: <Timeline /> },
-      { path: "card", element: <div>card</div> },
-      { path: "contacts", element: <div>contacts</div> },
-      { path: "*", element: <div>Note found</div> }
+      { path: "card", element: <BankCard /> },
+      { path: "contacts", element: <Contacts /> },
+      { path: "*", element: <NotFound /> }
     ]
   }
 ];

@@ -36,7 +36,10 @@ const Currency: React.FC<CurrencyItem> = ({
   );
 
   return (
-    <div onClick={handleClick} className={classCurrency}>
+    <div
+      data-testcy="currency-item"
+      onClick={handleClick}
+      className={classCurrency}>
       <img src={img} alt={iso} />
       <div className={classCurrencyInfo}>
         <h3>{title}</h3>

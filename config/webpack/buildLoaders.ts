@@ -11,7 +11,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions["rules"] {
   };
 
   const scssLoader = {
-    test: /\.s[ac]ss$/i,
+    test: /\.s[ac]ss|\.css$/i,
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
       "css-loader",

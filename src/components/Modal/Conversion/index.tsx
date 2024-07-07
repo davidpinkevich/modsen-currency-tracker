@@ -45,6 +45,7 @@ const Conversion = () => {
         {CURRENCY_ITEMS.QUOTES.map((item, index) => {
           return (
             <div
+              data-testcy="check-conversion"
               onClick={() => handleClick(item.iso)}
               className={
                 conversionISO.to === item.iso
