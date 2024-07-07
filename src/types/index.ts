@@ -15,8 +15,10 @@ import {
   type PropsInputDate,
   type PropsSelectCurrency,
   type PropsTimeline,
+  type PropsTimelineBtnCreate,
   type PropsTimeseriesFilters,
-  type PropsTimeseriesGraph
+  type PropsTimeseriesGraph,
+  type TypeParamsTimeseries
 } from "./Timeseries.types";
 
 export type {
@@ -24,6 +26,7 @@ export type {
   PropsInputDate,
   PropsSelectCurrency,
   PropsTimeline,
+  PropsTimelineBtnCreate,
   PropsTimeseriesFilters,
   PropsTimeseriesGraph,
   TypeCurrencyItems,
@@ -33,5 +36,6 @@ export type {
   TypeErrorBoundaryState,
   TypeItemTimeseries,
   TypeLinkHeader,
+  TypeParamsTimeseries,
   TypeRoundingConversion
 };
