@@ -23,8 +23,10 @@ import {
   type PropsInputDate,
   type PropsSelectCurrency,
   type PropsTimeline,
+  type PropsTimelineBtnCreate,
   type PropsTimeseriesFilters,
-  type PropsTimeseriesGraph
+  type PropsTimeseriesGraph,
+  type TypeParamsTimeseries
 } from "./Timeseries.types";
 
 export type {
@@ -35,6 +37,7 @@ export type {
   PropsMarker,
   PropsSelectCurrency,
   PropsTimeline,
+  PropsTimelineBtnCreate,
   PropsTimeseriesFilters,
   PropsTimeseriesGraph,
   StateBankMap,
@@ -46,6 +49,7 @@ export type {
   TypeErrorBoundaryState,
   TypeItemTimeseries,
   TypeLinkHeader,
+  TypeParamsTimeseries,
   TypeRoundingConversion,
   UpdateMapboxItem
 };

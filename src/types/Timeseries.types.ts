@@ -1,7 +1,7 @@
 import { type DirectionOptions } from "@constants/directionOptions";
 import { type TypeItemTimeseries } from "@src/types";
 
-interface TypeParamsTimeseries {
+export interface TypeParamsTimeseries {
   from: string;
   to: string;
   start: string;
@@ -11,6 +11,13 @@ export interface PropsTimeline {
   dataTimeseries: TypeItemTimeseries[] | undefined;
   paramsTimeseries: TypeParamsTimeseries;
   loading: boolean;
+  fetchTimeseries: (params: TypeParamsTimeseries) => void;
+}
+
+export interface PropsTimelineBtnCreate {
+  dataTimeseries: TypeItemTimeseries[] | undefined;
+  paramsTimeseries: TypeParamsTimeseries;
+  theme: string;
   fetchTimeseries: (params: TypeParamsTimeseries) => void;
 }
 
@@ -29,8 +36,8 @@ export interface PropsTimeseriesFilters {
 
 export interface PropsInputDate {
   paramsTimeseries: TypeParamsTimeseries;
-  loading: boolean;
   theme: string;
+  loading: boolean;
   type: DirectionOptions.START | DirectionOptions.END;
   changeParamsTimeseriesStart: (value: string) => void;
   changeParamsTimeseriesEnd: (value: string) => void;
