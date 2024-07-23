@@ -31,7 +31,7 @@ const App: React.FC = () => {
   const classApp = createClass(styles.app, styles.app_white);
 
   return (
-    <div className={classApp}>
+    <div className={classApp} data-testcy="layout">
       <Routes>
         {routes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element}>
