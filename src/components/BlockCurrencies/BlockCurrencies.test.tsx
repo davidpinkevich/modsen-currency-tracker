@@ -1,5 +1,4 @@
 import { Provider } from "react-redux";
-import { expect } from "@jest/globals";
 import { render, type RenderResult } from "@testing-library/react";
 
 import { type AppDispatch, type RootState } from "@redux/store";
@@ -7,6 +6,7 @@ import { mockDataStore } from "@mocks/mockStore";
 
 import { BlockCurrencies } from ".";
 
+import { expect } from "@jest/globals";
 import configureStore, { type MockStoreEnhanced } from "redux-mock-store";
 
 const mockStore = configureStore<RootState, AppDispatch>();

@@ -1,9 +1,9 @@
 import { Provider } from "react-redux";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { expect } from "@jest/globals";
 
 import { Swiper } from ".";
 
+import { expect } from "@jest/globals";
 import configureStore from "redux-mock-store";
 
 const mockStore = configureStore([]);
