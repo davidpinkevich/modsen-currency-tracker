@@ -34,7 +34,7 @@ class ButtonCreate extends Component<PropsTimelineBtnCreate> {
 
     const classButtonCreate =
       theme === ThemeMode.DARK
-        ? styles.date
+        ? styles.button
         : classNames(styles.button, styles.button_white);
     return (
       <button className={classButtonCreate} onClick={this.handleClick}>
