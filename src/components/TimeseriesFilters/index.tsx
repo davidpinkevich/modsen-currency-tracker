@@ -7,6 +7,7 @@ import { ThemeMode } from "@constants/themeMode";
 import { type RootState } from "@redux/store";
 import { type PropsTimeseriesFilters } from "@src/types";
 
+import ButtonCreate from "./ButtonCreate/ButtonCreate";
 import DateInput from "./DateInput";
 import SelectCurrency from "./SelectCurrency";
 
@@ -33,6 +34,7 @@ class TimeseriesFilters extends Component<PropsTimeseriesFilters> {
           <DateInput type={DirectionOptions.START} />
           <DateInput type={DirectionOptions.END} />
         </div>
+        <ButtonCreate />
       </div>
     );
   }

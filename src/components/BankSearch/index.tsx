@@ -12,8 +12,6 @@ import styles from "./styles.module.scss";
 
 import { ThemeMode } from "@src/constants/themeMode";
 
-const title = "Search currency in the bank";
-
 class BankSearch extends Component<PropsBankSearch> {
   handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.props.handleChangeFilter(e.target.value);
@@ -44,7 +42,7 @@ class BankSearch extends Component<PropsBankSearch> {
 
     return (
       <div className={classBankSearch}>
-        <h2>{title}</h2>
+        <h2>Search currency in the bank</h2>
         <div className={classBankSearchInput}>
           <input
             placeholder="Сurrency search..."

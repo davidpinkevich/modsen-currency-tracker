@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { connect, shallowEqual } from "react-redux";
+import { connect } from "react-redux";
 
 import { fetchTimeseries } from "@redux/slices/sliceTracker";
 import { type AppDispatch, type RootState } from "@redux/store";
@@ -15,14 +15,6 @@ class Timeline extends Component<PropsTimeline> {
   componentDidMount() {
     const { paramsTimeseries, fetchTimeseries } = this.props;
     fetchTimeseries(paramsTimeseries);
-  }
-
-  componentDidUpdate(prevProps: PropsTimeline) {
-    const { paramsTimeseries, fetchTimeseries } = this.props;
-
-    if (!shallowEqual(prevProps.paramsTimeseries, paramsTimeseries)) {
-      fetchTimeseries(paramsTimeseries);
-    }
   }
 
   render() {

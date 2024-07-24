@@ -1,5 +1,3 @@
-import classNames from "classnames";
-
 import img from "@assets/icons/not-found.svg";
 
 import styles from "./styles.module.scss";
@@ -7,11 +5,9 @@ import styles from "./styles.module.scss";
 import { useTheme } from "@src/hooks/useTheme";
 
 const NotFound: React.FC = () => {
-  const darkTheme = useTheme();
+  const createClass = useTheme();
 
-  const classNotFound = darkTheme
-    ? styles.not_found
-    : classNames(styles.not_found, styles.not_found_white);
+  const classNotFound = createClass(styles.not_found, styles.not_found_white);
 
   return (
     <div className={classNotFound}>

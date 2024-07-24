@@ -55,7 +55,7 @@ class SelectCurrency extends Component<
         : classNames(styles.select, styles.select_white);
 
     return (
-      <div className={classSelectCurrency}>
+      <div data-testcy="select" className={classSelectCurrency}>
         <button className={styles.select_btn} onClick={this.toggleDropdown}>
           <p>{findCurrentSelect(SELECT_QUOTES, paramsTimeseries[type])}</p>
           <img

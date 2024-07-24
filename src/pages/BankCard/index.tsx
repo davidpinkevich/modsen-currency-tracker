@@ -27,18 +27,18 @@ class BankCard extends Component {
   };
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(async ({ coords }) => {
+    navigator.geolocation.getCurrentPosition(async (coords) => {
       this.setState({
         view: {
           ...this.state.view,
-          longitude: coords.longitude,
-          latitude: coords.latitude
+          longitude: coords.coords.longitude,
+          latitude: coords.coords.latitude
         }
       });
 
       const data = await serviceMapbox.getBanks([
-        coords.longitude,
-        coords.latitude
+        coords.coords.longitude,
+        coords.coords.latitude
       ]);
       this.setState({ data: updateDataBanks(data) });
     });
