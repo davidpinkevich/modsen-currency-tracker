@@ -1,6 +1,6 @@
-import { expect } from "@jest/globals";
-
 import { getConversion, sliceConversion } from "@utils/helpers/getConversion";
+
+import { expect } from "@jest/globals";
 
 describe("conversion", () => {
   test("rounding", () => {

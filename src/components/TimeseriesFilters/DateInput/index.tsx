@@ -25,23 +25,9 @@ class DateInput extends Component<PropsInputDate> {
     const newDate = event.target.value;
 
     if (type === DirectionOptions.START) {
-      if (
-        newDate <= getCurrentDate() &&
-        newDate <= this.props.paramsTimeseries.end
-      ) {
-        changeParamsTimeseriesStart(newDate);
-      } else {
-        changeParamsTimeseriesStart(this.props.paramsTimeseries.start);
-      }
+      changeParamsTimeseriesStart(newDate);
     } else {
-      if (
-        newDate <= getCurrentDate() &&
-        newDate >= this.props.paramsTimeseries.start
-      ) {
-        changeParamsTimeseriesEnd(newDate);
-      } else {
-        changeParamsTimeseriesEnd(this.props.paramsTimeseries.end);
-      }
+      changeParamsTimeseriesEnd(newDate);
     }
   };
 

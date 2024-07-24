@@ -1,6 +1,6 @@
-import { expect } from "@jest/globals";
-
 import { createRealRate } from "@utils/helpers/createRealRate";
+
+import { expect } from "@jest/globals";
 
 describe("create real rate", () => {
   test("should return 'No data available' for empty string", () => {

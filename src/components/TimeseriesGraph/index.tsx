@@ -48,11 +48,7 @@ class TimeseriesGraph extends Component<PropsTimeseriesGraph> {
       const config = createGraphConfig(dataTimeseries);
       return (
         <div className={classTimeseriesGraph}>
-          {dataTimeseries.length >= 30 ? (
-            <Bar {...config} />
-          ) : (
-            <p>Please indicate a period of 30 days</p>
-          )}
+          {dataTimeseries.length >= 30 && <Bar {...config} />}
           {dataTimeseries.length >= 30 && <VeiwSuccess />}
         </div>
       );

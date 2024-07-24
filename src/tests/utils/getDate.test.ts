@@ -1,6 +1,6 @@
-import { expect } from "@jest/globals";
-
 import { getCurrentDate, getThirtyDaysAgoDate } from "@utils/helpers/getDate";
+
+import { expect } from "@jest/globals";
 
 describe("get date", () => {
   test("should return the current date in YYYY-MM-DD format", () => {

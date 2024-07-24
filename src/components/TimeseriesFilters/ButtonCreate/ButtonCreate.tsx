@@ -1,8 +1,9 @@
 import { Component } from "react";
-import { connect, shallowEqual } from "react-redux";
+import { connect } from "react-redux";
 import classNames from "classnames";
 
 import { ThemeMode } from "@constants/themeMode";
+import { isDateInRange } from "@utils/helpers/isDateInRange";
 import { fetchTimeseries } from "@redux/slices/sliceTracker";
 import { type AppDispatch, type RootState } from "@redux/store";
 import {
@@ -22,10 +23,9 @@ class ButtonCreate extends Component<PropsTimelineBtnCreate> {
 
   handleClick = () => {
     const { paramsTimeseries, fetchTimeseries } = this.props;
-    if (!shallowEqual(paramsTimeseries, this.previousParamsTimeseries)) {
-      fetchTimeseries(paramsTimeseries);
 
-      this.previousParamsTimeseries = paramsTimeseries;
+    if (isDateInRange(paramsTimeseries.start, paramsTimeseries.end)) {
+      fetchTimeseries(paramsTimeseries);
     }
   };
 
@@ -37,9 +37,11 @@ class ButtonCreate extends Component<PropsTimelineBtnCreate> {
         ? styles.button
         : classNames(styles.button, styles.button_white);
     return (
-      <button className={classButtonCreate} onClick={this.handleClick}>
-        Create Graph
-      </button>
+      <>
+        <button className={classButtonCreate} onClick={this.handleClick}>
+          Create Graph
+        </button>
+      </>
     );
   }
 }

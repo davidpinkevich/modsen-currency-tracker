@@ -31,6 +31,8 @@ export interface PropsSelectCurrency {
 }
 
 export interface PropsTimeseriesFilters {
+  paramsTimeseries: TypeParamsTimeseries;
+  dataTimeseries: TypeItemTimeseries[] | undefined;
   theme: string;
 }
 
@@ -45,5 +47,6 @@ export interface PropsInputDate {
 
 export interface PropsTimeseriesGraph {
   dataTimeseries: TypeItemTimeseries[] | undefined;
+  paramsTimeseries: TypeParamsTimeseries;
   theme: string;
 }
